@@ -19,7 +19,7 @@
                 <tr><td>Date de naissance</td><td>".$vResult[datenaissance]."</td></tr>
                 <tr><td>Adresse</td><td>".$vResult[adresse_numero]." ".$vResult[adresse_rue]." ".$vResult[adresse_codepostal]." ".$vResult[adresse_ville]." ".$vResult[adresse_pays]."</td></tr>
                 <tr><td>Pays</td><td>".$vResult[adresse_pays]."</td></tr>
-                <tr><td>Type</td><td>".$vResult[type]."</td></tr>"
+                <tr><td>Type</td><td>".$vResult[type]."</td></tr>";
             }
             pg_close($conn)
             ?>
