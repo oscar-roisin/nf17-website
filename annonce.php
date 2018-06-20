@@ -46,6 +46,8 @@
           <label for="date_expiration_annonce"> Date Expiration : </label>
           <input type="date" name="date_expiration_annonce" id="date_expiration_annonce" />
         </p>
+
+        <input type="submit" value="Envoyer" />
       </form>
 
     </body>
