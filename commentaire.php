@@ -28,11 +28,9 @@
                while ($vResult2 = pg_fetch_array($vQuery2, null, PGSQL_ASSOC)) {
                  echo "<option value=".$vResult2[pseudo]."> ".$vResult2[nom]." ".$vResult2[prenom]."</option>";
                  }
-                 echo"<select/>";
-             }  pg_close($connexion);
+               echo"<select/>";
+               pg_close($connexion);
                ?>
-
-
 
               Commentaire : <br>
               <input type="text" name="commentaire"> <br>
