@@ -32,6 +32,18 @@
           <label for="photo_annonce"> Ajouter une photo  : </label>
           <input type="file" name="photo_annonce" id="photo_annonce" />
         </p>
+        <p>
+          <label for="lien_annonce"> Lien : </label>
+          <input type="url" name="lien_annonce" id="lien_annonce" />
+        </p>
+        <p>
+          <label for="date_debut_annonce"> Date Debut  : </label>
+          <input type="date" name="date_debut_annonce" id="date_debut_annonce" />
+        </p>
+        <p>
+          <label for="date_expiration_annonce"> Date Expiration : </label>
+          <input type="date" name="date_expiration_annonce" id="date_expiration_annonce" />
+        </p>
       </form>
       <a href="index.html">MENU</a>
     </body>
