@@ -7,33 +7,33 @@
     <body>
         <h1> Commentaires </h1>
           <h2> Ajout </h2>
+          <FORM METHOD='POST' ACTION='ajout_commentaire.php'>
+            Annonce : <br>
 
               <?php $connexion = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
 
               $annonce = "SELECT * FROM annonce";
               $vQuery=pg_query($connexion, $annonce);
-
+              echo"<select name='annonce'>";
               while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
-                echo "
-                <tr><td>Nom</td><td>".$vResult[titre]."</td></tr>
-                <tr><td>Prenom</td><td>".$vResult[description]."</td></tr>";
+                echo "<option value=".$vResult[idAnnonce]."> ".$vResult[titre]."</option>";
                 }
+                echo"<select/>";
 
                $user = "SELECT * FROM utilisateur";
                $vQuery2=pg_query($connexion, $user);
+
+               echo "Utilisateur : <br>"
+               echo"<select name='user'>";
                while ($vResult2 = pg_fetch_array($vQuery2, null, PGSQL_ASSOC)) {
-               echo "
-               <tr><td>Nom</td><td>".$vResult2[nom]."</td></tr>
-               <tr><td>Prenom</td><td>".$vResult2[prenom]."</td></tr>
-               <tr><td>Date de naissance</td><td>".$vResult2[datenaissance]."</td></tr>";
+                 echo "<option value=".$vResult2[pseudo]."> ".$vResult2[nom]." ".$vResult2[prenom]."</option>";
+                 }
+                 echo"<select/>";
              }  pg_close($connexion);
                ?>
 
-            <FORM METHOD='POST' ACTION='ajout_commentaire.php'>
-              Annonce : <br>
-              <input type="number" name="annonce"> <br>
-              Utilisateur : <br>
-              <input type="text" name="user"> <br>
+
+
               Commentaire : <br>
               <input type="text" name="commentaire"> <br>
               <input type="submit" name="ajout_commentaire">
