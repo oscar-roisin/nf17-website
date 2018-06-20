@@ -8,7 +8,7 @@
         <table>
             <?php
 
-            $vConn = pg_connect("host=$vHost port=$vPort dbname=$vDbname user=$vUser password=$vPassword");
+            $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
 
             $vSql ="SELECT * FROM utilisateur";
             $vQuery=pg_query($vConn, $vSql);
