@@ -16,7 +16,7 @@
             while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "
                 <table>
-                <tr><td>Pseudo</td><td>".$vResult['pseudo']."</td>/tr>
+                <tr><td>Pseudo</td><td>".$vResult['pseudo']."</td></tr>
                 <tr><td>Nom</td><td>".$vResult['nom']."</td></tr>
                 <tr><td>Prenom</td><td>".$vResult['prenom']."</td></tr>
                 <tr><td>Date de naissance</td><td>".$vResult['datenaissance']."</td></tr>
