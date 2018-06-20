@@ -18,7 +18,6 @@
                 <tr><td>Nom</td><td>".$vResult[titre]."</td></tr>
                 <tr><td>Prenom</td><td>".$vResult[description]."</td></tr>";
                 }
-}
 
                $user = "SELECT * FROM utilisateur";
                $vQuery2=pg_query($connexion, $user);
@@ -27,7 +26,7 @@
                <tr><td>Nom</td><td>".$vResult2[nom]."</td></tr>
                <tr><td>Prenom</td><td>".$vResult2[prenom]."</td></tr>
                <tr><td>Date de naissance</td><td>".$vResult2[datenaissance]."</td></tr>";
-             }  pg_close($connection);
+               }  pg_close($connection);
                ?>
 
             <FORM METHOD='POST' ACTION='ajout_commentaire.php'>
