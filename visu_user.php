@@ -24,5 +24,6 @@
             }
             pg_close($vConn);
             ?>
+            <a href="index.html">MENU</a>
     </body>
 </html>
