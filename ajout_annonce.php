@@ -33,5 +33,6 @@
           <input type="file" name="photo_annonce" id="photo_annonce" />
         </p>
       </form>
+      <a href="index.html">MENU</a>
     </body>
 </html>
