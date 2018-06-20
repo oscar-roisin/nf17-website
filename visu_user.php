@@ -8,7 +8,7 @@
         <table>
             <?php
 
-            $vConn = pg_connect("host=$vHost port=$vPort dbname=$vDbname user=$vUser password=$vPassword");
+            $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
 
             $vSql ="SELECT * FROM utilisateur";
             $vQuery=pg_query($vConn, $vSql);
@@ -18,7 +18,7 @@
                 <tr><td>Prenom</td><td>".$vResult[prenom]."</td></tr>
                 <tr><td>Date de naissance</td><td>".$vResult[datenaissance]."</td></tr>
                 <tr><td>Adresse</td><td>".$vResult[adresse_numero]." ".$vResult[adresse_rue]." ".$vResult[adresse_codepostal]." ".$vResult[adresse_ville]." ".$vResult[adresse_pays]."</td></tr>
-                <tr><td>Pays</td><td>"$vResult[adresse_pays]."</td></tr>
+                <tr><td>Pays</td><td>".$vResult[adresse_pays]."</td></tr>
                 <tr><td>Type</td><td>".$vResult[type]."</td></tr>"
             }
             pg_close($conn)
