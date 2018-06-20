@@ -23,8 +23,8 @@
           Rue<input type="text" name"rue_adresse"><br>
           CP<input type="number" name="cp_adresse">
           Ville<input type="text" name="ville_adresse"><br>
-          Pays<input <type="text" name="pays_adresse">
-          Type:<br>ESPACE), expecting identifier (T_STRING) or variable (T_VARIABLE) or number (T_NUM_STRING) in /volsme/user1x/users/nf17p095/public_html/ajout_utilisateur.php on line 10
+          Pays<input <type="text" name="pays_adresse"><br>
+          Type:<br>
           <input type="radio" name="type" value="utilisateur" checked> Utilisateur<br>
           <input type="radio" name="type" value="administrateur"> Administrateur<br>
           <input type="submit" name="ajout_utilisateur">
