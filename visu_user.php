@@ -22,7 +22,7 @@
                 <tr><td>Type</td><td>".$vResult[type]."</td></tr>
                 </table>";
             }
-            pg_close($conn)
+            pg_close($vConn);
             ?>
     </body>
 </html>
