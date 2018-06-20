@@ -8,11 +8,10 @@
         <h1> Commentaires </h1>
           <h2> Ajout </h2>
 
-              <? $connexion = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
+              <?php $connexion = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
 
               $annonce = "SELECT * FROM annonces";
-              $resultsetannonce = $connexion->prepare($annonce);
-              $resultsetannonce->execute();
+              $vQuery=pg_query($connexion, $annonce);
 
               while ($row = $resultsetannonce->fetch(PDO::FETCH_ASSOC)) {
 	               echo $row['nom'];
@@ -36,6 +35,8 @@
               <input type="text" name="user"> <br>
               Commentaire : <br>
               <input type="text" name="commentaire"> <br>
+              <input type="submit" name="ajout_commentaire">
+              <input type="reset">
             </FORM>
 
     </body>
