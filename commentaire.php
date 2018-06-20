@@ -26,7 +26,7 @@
                <tr><td>Nom</td><td>".$vResult2[nom]."</td></tr>
                <tr><td>Prenom</td><td>".$vResult2[prenom]."</td></tr>
                <tr><td>Date de naissance</td><td>".$vResult2[datenaissance]."</td></tr>";
-               }  pg_close($connection);
+             }  pg_close($connexion);
                ?>
 
             <FORM METHOD='POST' ACTION='ajout_commentaire.php'>
