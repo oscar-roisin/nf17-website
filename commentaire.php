@@ -40,6 +40,6 @@
               <input type="submit" name="ajout_commentaire">
               <input type="reset">
             </FORM>
-
+            <a href="index.html">MENU</a>
     </body>
 </html>
