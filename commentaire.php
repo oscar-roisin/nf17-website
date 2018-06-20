@@ -10,22 +10,23 @@
 
               <?php $connexion = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
 
-              $annonce = "SELECT * FROM annonces";
+              $annonce = "SELECT * FROM annonce";
               $vQuery=pg_query($connexion, $annonce);
 
-              while ($row = $resultsetannonce->fetch(PDO::FETCH_ASSOC)) {
-	               echo $row['nom'];
-	               echo " ";
-               }
+              while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+                echo "
+                <tr><td>Nom</td><td>".$vResult[titre]."</td></tr>
+                <tr><td>Prenom</td><td>".$vResult[description]."</td></tr>";
+                }
 
                $user = "SELECT * FROM utilisateur";
-               $resultsetuser = $connexion->prepare($user);
-               $resultsetuser->execute();
-
-               while ($row = $resultsetuser->fetch(PDO::FETCH_ASSOC)) {
- 	               echo $row['nom'];
- 	               echo " ";
-                }
+               $vQuery2=pg_query($connexion, $user);
+               while ($vResult2 = pg_fetch_array($vQuery2, null, PGSQL_ASSOC)) {
+               echo "
+               <tr><td>Nom</td><td>".$vResult2[nom]."</td></tr>
+               <tr><td>Prenom</td><td>".$vResult2[prenom]."</td></tr>
+               <tr><td>Date de naissance</td><td>".$vResult2[datenaissance]."</td></tr>";
+               }  pg_close($connection);
                ?>
 
             <FORM METHOD='POST' ACTION='ajout_commentaire.php'>
@@ -38,6 +39,6 @@
               <input type="submit" name="ajout_commentaire">
               <input type="reset">
             </FORM>
-
+            <a href="index.html">MENU</a>
     </body>
 </html>

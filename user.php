@@ -33,5 +33,6 @@
       <h2>Visualisation</h2>
         <FORM METHOD='POST' ACTION='visu_user.php' >
         </form>
+        <a href="index.html">MENU</a>
     </body>
 </html>

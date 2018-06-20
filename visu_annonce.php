@@ -5,6 +5,7 @@
         <title>Liste utilisateurs</title>
     </head>
     <body>
+<<<<<<< HEAD
             <?php
 
             $id = $_POST['id'];
@@ -39,6 +40,10 @@
             }
             pg_close($vConn);
             ?>
+=======
+        Coucou <3
+        <a href="index.html">MENU</a>
+>>>>>>> 1e2d6cd316fc7f0bc4aa29f5432d5dc1a05fb3bb
     </body>
 </html>
 
