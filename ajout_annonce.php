@@ -2,28 +2,21 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Ajotuer une Annonce</title>
+        <title>Ajouter une Annonce</title>
     </head>
     <body>
-      
+
       <a href="index.html">MENU</a>
       <?php
 
       $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
 
-      $vSql ="SELECT * FROM utilisateur";
+      $vSql ="INSERT INTO utilisateur(titreannonce, descriptionannonce, categorie,nomenseigne,lien,datedebut, dateexpiration)
+                    values($_POST['titre_annonce'], $_POST['description_annonce'],$_POST['categorie_annonce'],$_POST['enseigne_annonce'],
+                          $_POST['lien_annonce'], $_POST['date_debut_annonce'], $_POST['date_expiration_annonce'])
+      )";
       $vQuery=pg_query($vConn, $vSql);
-      while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
-          echo "
-          <table>
-          <tr><td>Nom</td><td>".$vResult['nom']."</td></tr>
-          <tr><td>Prenom</td><td>".$vResult['prenom']."</td></tr>
-          <tr><td>Date de naissance</td><td>".$vResult['datenaissance']."</td></tr>
-          <tr><td>Adresse</td><td>".$vResult['adresse_numero']." ".$vResult['adresse_rue']." ".$vResult['adresse_codepostal']." ".$vResult['adresse_ville']."</td></tr>
-          <tr><td>Pays</td><td>".$vResult['adresse_pays']."</td></tr>
-          <tr><td>Type</td><td>".$vResult['type']."</td></tr>
-          </table>";
-      }
+      
       pg_close($vConn);
       ?>
     </body>

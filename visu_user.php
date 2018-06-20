@@ -11,12 +11,12 @@
 
             $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
 
-            $vSql ="SELECT * FROM utilisateur WHERE pseudo LIKE $pseudo";
+            $vSql ="SELECT * FROM utilisateur WHERE pseudo LIKE '".$pseudo."'";
             $vQuery=pg_query($vConn, $vSql);
             while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "
                 <table>
-                <tr><td>Pseudo</td><td>".$vResult['pseudo']."</td>/tr>
+                <tr><td>Pseudo</td><td>".$vResult['pseudo']."</td></tr>
                 <tr><td>Nom</td><td>".$vResult['nom']."</td></tr>
                 <tr><td>Prenom</td><td>".$vResult['prenom']."</td></tr>
                 <tr><td>Date de naissance</td><td>".$vResult['datenaissance']."</td></tr>
