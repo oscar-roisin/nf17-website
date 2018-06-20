@@ -7,7 +7,7 @@
     <body>
             <?php
 
-            $pseudo = $_POST['pseudo'];
+            $pseudo = $_POST['user'];
 
             $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
 
