@@ -7,7 +7,7 @@
     <body>
       <?php
       $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
-      $vSql ="INSERT INTO commentaire(pseudo, idAnnonce, texte) VALUES ('"$_POST['annonce']"','"$_POST['user']"','"$_POST['commentaire']"');";
+      $vSql ="INSERT INTO commentaire(pseudo, idAnnonce, texte) VALUES ('".$_POST['annonce']."','".$_POST['user']."','".$_POST['commentaire']."');";
       $vQuery=pg_query($vConn, $vSql);
       ?>
       <a href="commentaire.php">Retour Commentaire</a><br>
