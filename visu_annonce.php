@@ -65,7 +65,7 @@
                 <table>
                 <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
                 <tr><td>Commentaire</td><td>".$vResult2['texte']."</td></tr>
-                <tr><td>Liker</td><td><button type='submit' name='pseudo' value=".$vResult2['idcommentaire'].">Liker</button></td></tr>
+                <tr><td>Liker</td><td><button type='submit' name='pseudo' value=".$vResult2['idCommentaire'].">Liker</button></td></tr>
                 </form>
 
                 <FORM METHOD='POST' ACTION='signalement.php'>";
@@ -80,7 +80,7 @@
                 }
                 echo"</select></td></tr>
                 <tr><td>Signalement</td><td><label for='raison_signalement'> Raison  : </label>
-                <input type='text' name='raison_signalement' id='raison_signalement' /><button type='submit' name='pseudosignal' value=".$vResult2['idcommentaire'].">Signaler</button></td></tr>
+                <input type='text' name='raison_signalement' id='raison_signalement' /><button type='submit' name='pseudosignal' value=".$vResult2['idCommentaire'].">Signaler</button></td></tr>
 
                 </table>";
             }
