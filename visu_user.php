@@ -14,7 +14,9 @@
             $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
 
             $vSql ="SELECT * FROM utilisateur WHERE pseudo LIKE '".$pseudo."'";
-            $vQuery=pg_query($vConn, $vSql);
+            if(!$vQuery = pg_query($vConn, $vSql)){
+                echo "Erreur dans l'execution de la requête";
+            }
 			echo "<h2>Utilisateur</h2>";
             while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "
@@ -30,7 +32,9 @@
             }
 			echo "<h2>Badges</h2>";
 			$vSql ="SELECT * FROM datebadge LEFT OUTER JOIN badge ON datebadge.titrebadge LIKE badge.titrebadge WHERE pseudo LIKE '".$pseudo."'";
-            $vQuery=pg_query($vConn, $vSql);
+            if(!$vQuery = pg_query($vConn, $vSql)){
+                echo "Erreur dans l'execution de la requête";
+            }
 			while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "
                 <table>

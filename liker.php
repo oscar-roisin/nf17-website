@@ -14,7 +14,9 @@
 
         $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
         $vSql = "INSERT INTO Liker VALUES ('".$pseudo."','".$idcommentaire."');";
-        $vQuery = pg_query($vConn, $vSql);
+        if(!$vQuery = pg_query($vConn, $vSql)){
+            echo "Erreur dans l'execution de la requête";
+        }
         pg_close($vConn);
 
       ?>

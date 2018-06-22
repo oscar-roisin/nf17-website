@@ -45,7 +45,12 @@
                           '$code', '$image') ;"    ;
         }
 
-        $vQuery = pg_query($vConn, $vSql);
+        if(!$vQuery = pg_query($vConn, $vSql)){
+            echo "Erreur dans l'ajout de l'annonce";
+        }
+        else{
+            echo "Annonce correctement ajoutée";
+        }
 
         pg_close($vConn);
 

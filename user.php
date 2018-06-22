@@ -36,7 +36,9 @@
           <?php
           $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
           $vSql ="SELECT * FROM utilisateur";
-          $vQuery=pg_query($vConn, $vSql);
+          if(!$vQuery = pg_query($vConn, $vSql)){
+              echo "Erreur dans l'execution de la requête";
+          }
           echo"<select name='user'>";
           while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
             echo "<option value=".$vResult['pseudo'].">".$vResult['nom']." ".$vResult['prenom']." (".$vResult['pseudo'].")</option>";

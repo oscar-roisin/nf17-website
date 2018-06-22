@@ -15,7 +15,9 @@
 
         $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
         $vSql = "INSERT INTO Vote VALUES ('".$pseudo."','".$idannonce."','".$value."',now());";
-        $vQuery = pg_query($vConn, $vSql);
+        if(!$vQuery = pg_query($vConn, $vSql)){
+            echo "Erreur dans l'execution de la requête";
+        }
         pg_close($vConn);
 
       ?>

@@ -14,7 +14,9 @@
 
             $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
             $vSql ="SELECT * FROM Annonce WHERE idAnnonce=$id";
-            $vQuery=pg_query($vConn, $vSql);
+            if(!$vQuery = pg_query($vConn, $vSql)){
+                echo "Erreur dans l'execution de la requête";
+            }
             while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "
                 <table>
@@ -47,7 +49,9 @@
                 <tr><td><p>Utilisateur à utiliser pour voter pour l'annonce</p></td>";
                 echo"<FORM METHOD='POST' ACTION='voter.php'>";
                 $vSql1 ="SELECT * FROM utilisateur";
-                $vQuery1=pg_query($vConn, $vSql1);
+                if(!$vQuery1=pg_query($vConn, $vSql1)){
+                    echo "Erreur dans l'execution de la requête";
+                }
                 echo"<td><select name='user'>";
                 while ($vResult1 = pg_fetch_array($vQuery1, null, PGSQL_ASSOC)) {
                 echo "<option value=".$vResult1['pseudo'].">".$vResult1['nom']." ".$vResult1['prenom']." (".$vResult1['pseudo'].")</option>";
@@ -67,7 +71,9 @@
 
 
             $vSql2 ="SELECT * FROM commentaire WHERE idAnnonce=$id";
-            $vQuery2=pg_query($vConn, $vSql2);
+            if(!($vQuery2=pg_query($vConn, $vSql2)){
+                echo "Erreur dans l'execution de la requête";
+            }
 
 
       echo "<h2>Commentaires</h2>";
@@ -81,7 +87,9 @@
                 <tr><td><p>Utilisateur à utiliser pour liker un commentaire</p></td>";
                 echo"<FORM METHOD='POST' ACTION='liker.php'>";
                 $vSql ="SELECT * FROM utilisateur";
-                $vQuery=pg_query($vConn, $vSql);
+                if(!$vQuery = pg_query($vConn, $vSql)){
+                    echo "Erreur dans l'execution de la requête";
+                }
                 echo"<td><select name='user'>";
                 while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "<option value=".$vResult['pseudo'].">".$vResult['nom']." ".$vResult['prenom']." (".$vResult['pseudo'].")</option>";
@@ -95,7 +103,9 @@
                 echo"<tr><td><p>Utilisateur à utiliser pour signaler un commentaire</p></td>";
 
                 $vSql ="SELECT * FROM utilisateur";
-                $vQuery=pg_query($vConn, $vSql);
+                if(!$vQuery = pg_query($vConn, $vSql)){
+                    echo "Erreur dans l'execution de la requête";
+                }
                 echo"<td><select name='user'>";
                 while ($vResult3 = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "<option value=".$vResult3['pseudo'].">".$vResult3['nom']." ".$vResult3['prenom']." (".$vResult3['pseudo'].")</option>";

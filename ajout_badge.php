@@ -25,7 +25,12 @@
                   values('".$titre."', '".$description."', '".$definitif."','".$duree."') ;"    ;
 
 
-        $vQuery = pg_query($vConn, $vSql);
+        if(!$vQuery = pg_query($vConn, $vSql)){
+            echo "Erreur dans l'ajout du badge";
+        }
+        else{
+            echo "Badge correctement ajouté";
+        }
 
         pg_close($vConn);
 

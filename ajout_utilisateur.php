@@ -12,7 +12,13 @@
       $vSql ="INSERT INTO utilisateur(pseudo, nom, prenom, datenaissance, mdp, adresse_numero, adresse_rue, adresse_codepostal,
           adresse_ville, adresse_pays, type) VALUES ('".$_POST['pseudo']."','".$_POST['nom']."','".$_POST['prenom']."','".$_POST['naissance']."',
               '".$_POST['mdp']."','".$_POST['num_adresse']."','".$_POST['rue_adresse']."','".$_POST['cp_adresse']."','".$_POST['ville_adresse']."','".$_POST['pays_adresse']."','".$_POST['type']."')";
-      $vQuery=pg_query($vConn, $vSql);
+
+      if(!$vQuery=pg_query($vConn, $vSql)){
+          echo "Erreur dans l'ajout de l'utilisateur";
+      }
+      else{
+          echo "Utilisateur correctement ajouté";
+      }
       ?>
     </body>
 </html>
