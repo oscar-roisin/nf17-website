@@ -35,7 +35,7 @@
 
             echo "<h4>Liste des annonces par votes</h4>";
 
-            $vSql ="SELECT a.titreannonce, SUM(v.valeur) AS score FROM Vote v RIGHT JOIN Annonce a ON v.idannonce = a.idannonce GROUP BY v.titreannonce ORDER BY score DESC";
+            $vSql ="SELECT a.titreannonce, SUM(v.valeur) AS score FROM Vote v RIGHT JOIN Annonce a ON v.idannonce = a.idannonce GROUP BY a.titreannonce ORDER BY score DESC";
             $vQuery=pg_query($vConn, $vSql);
             echo "<tr><td>Titre de l'annonce</td><td>Score</td></tr>";
             while ($vResult = pg_fetch_array($vQuery, null, PGSQL_NUM)) {
