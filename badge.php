@@ -20,13 +20,8 @@
         </p>
 
         <p>
-          <label for="logo_badge"> Logo du Badge  : </label>
-          <input type="file" name="logo_badge" id="logo_badge" />
-        </p>
-
-        <p>
           <label class = "duree_badge" for="duree_badge"> Nombre de Jour avant Expiration : </label>
-          <input class = "duree_badge" type="number" name="duree_badge" id="duree_badge" />
+          <input class = "duree_badge" type="number" name="duree_badge" id="duree_badge" placeholder=0/>
         </p>
 
 
