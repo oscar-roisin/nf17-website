@@ -31,13 +31,23 @@
             $vResult = pg_fetch_array($vQuery, null, PGSQL_NUM);
             echo "<tr><td>Nombre de likes</td><td>".$vResult[0]."</td></tr>";
 
-            echo "</table><br>";
+            echo "</table><br><table>";
+
+            echo "<h4>Liste des annonces par votes</h4>";
+
+            $vSql ="SELECT a.titreannonce, SUM(v.valeur) AS score FROM Vote v RIGHT JOIN Annonce a ON v.idannonce = a.idannnonce GROUP BY v.titreannonce ORDER BY score DESC";
+            $vQuery=pg_query($vConn, $vSql);
+            echo "<tr><td>Titre de l'annonce</td><td>Score</td></tr>";
+            while ($vResult = pg_fetch_array($vQuery, null, PGSQL_NUM)) {
+              echo "<tr><td>".$vResult[0]."</td><td>".$vResult[1]."</td></tr>";
+              }
+            echo "</table><br><table>";
 
             echo "<h4>Liste des utilisateurs triés par nombre d'annonces postées</h4>";
 
             $vSql ="SELECT pseudo, COUNT(idannonce) as nbAnnonces FROM Annonce a JOIN Utilisateur u ON a.pseudoUtilisateur=u.pseudo GROUP BY pseudo ORDER BY nbAnnonces DESC";
             $vQuery=pg_query($vConn, $vSql);
-            echo "<table><tr><td>Pseudo</td><td>Annonces postées</td></tr>";
+            echo "<tr><td>Pseudo</td><td>Annonces postées</td></tr>";
             while ($vResult = pg_fetch_array($vQuery, null, PGSQL_NUM)) {
               echo "<tr><td>".$vResult[0]."</td><td>".$vResult[1]."</td></tr>";
               }
