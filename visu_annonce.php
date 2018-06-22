@@ -53,8 +53,8 @@
                 echo "<option value=".$vResult1['pseudo'].">".$vResult1['nom']." ".$vResult1['prenom']." (".$vResult1['pseudo'].")</option>";
                 }
                 echo"</select></td></tr>
-                <tr><td><button type='submit' name='+1' value=".$vResult['idannonce'].">+1</button></td>
-                <td><button type='submit' name='-1' value=".$vResult['idannonce'].">-1</button></td></tr>
+                <tr><td><button type='submit' name='plus1' value=".$vResult['idannonce'].">+1</button></td>
+                <td><button type='submit' name='moins1' value=".$vResult['idannonce'].">-1</button></td></tr>
 
                 </form>
 

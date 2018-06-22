@@ -10,8 +10,8 @@
       <a href="annonce.php">Retour aux annonces</a><br>
       <?php
         $pseudo = $_POST['user'];
-        if($_POST['-1']) {$value = -1; $idannonce = $_POST['-1'];}
-        else {$value =1; $idannonce = $_POST['+1'];}
+        if($_POST['moins1']) {$value = -1; $idannonce = $_POST['moins1'];}
+        else {$value =1; $idannonce = $_POST['plus1'];}
 
         $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
         $vSql = "INSERT INTO Vote VALUES ('".$pseudo."','".$idannonce."','".$value."',now());";
