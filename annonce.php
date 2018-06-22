@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Ajotuer une Annonce</title>
+        <title>Ajouter une Annonce</title>
     </head>
     <body>
       <a href="http://tuxa.sme.utc/~nf17p095/">MENU</a>

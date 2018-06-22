@@ -2,7 +2,7 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Ajotuer un Badge</title>
+        <title>Ajouter un Badge</title>
     </head>
     <body>
       <a href="http://tuxa.sme.utc/~nf17p095/">MENU</a>
