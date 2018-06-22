@@ -19,9 +19,9 @@
           Rue:<br>
           <input type="text" name="localisationrue"><br>
           Code Postal<br>
-          <input type="text" name="localisationcodepostal">
+          <input type="text" name="localisationcodepostal"><br>
           Ville<br>
-          <input type="text" name="localisationville">
+          <input type="text" name="localisationville"><br>
           Pays<br>
           <input type="text" name"localisationpays"><br>
           <input type="submit" name="ajout_enseigne">
