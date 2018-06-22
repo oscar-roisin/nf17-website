@@ -15,6 +15,7 @@
 
             $vSql ="SELECT * FROM utilisateur WHERE pseudo LIKE '".$pseudo."'";
             $vQuery=pg_query($vConn, $vSql);
+			echo "<h2>Utilisateur</h2>";
             while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "
                 <table>
@@ -26,6 +27,17 @@
                 <tr><td>Pays</td><td>".$vResult['adresse_pays']."</td></tr>
                 <tr><td>Type</td><td>".$vResult['type']."</td></tr>
                 </table>";
+            }
+			echo "<h2>Badges</h2>";
+			$vSql ="SELECT * FROM datebadge LEFT OUTER JOIN badge ON datebadge.titrebadge LIKE badge.titrebadge WHERE pseudo LIKE '".$pseudo."'";
+            $vQuery=pg_query($vConn, $vSql);
+			while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+                echo "
+                <table>
+                <tr><td>Titre</td><td>".$vResult['titrebadge']."</td></tr>
+                <tr><td>Description</td><td>".$vResult['descriptionbadge']."</td></tr>
+                <tr><td>Date Obtention</td><td>".$vResult['dateobtention']."</td></tr>
+                </table><br>------------------------------------------------------------------------------------<br>";
             }
             pg_close($vConn);
             ?>
