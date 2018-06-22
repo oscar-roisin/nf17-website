@@ -51,10 +51,10 @@
 
 
 
-            $vSql ="SELECT * FROM commentaire WHERE idAnnonce=$id";
-            $vQuery=pg_query($vConn, $vSql);
+            $vSql2 ="SELECT * FROM commentaire WHERE idAnnonce=$id";
+            $vQuery2=pg_query($vConn, $vSql2);
 			echo "<h2>Commentaires</h2>";
-            while ($vResult2 = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+            while ($vResult2 = pg_fetch_array($vQuery2, null, PGSQL_ASSOC)) {
                 echo "
                 <table>
                 <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
@@ -62,9 +62,9 @@
 
                 <tr><td><p>Utilisateur à utiliser pour liker un commentaire</p></td>";
                 $vSql ="SELECT * FROM utilisateur";
-                $vQuery2=pg_query($vConn, $vSql);
+                $vQuery=pg_query($vConn, $vSql);
                 echo"<td><select name='user'>";
-                while ($vResult = pg_fetch_array($vQuery2, null, PGSQL_ASSOC)) {
+                while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "<option value=".$vResult['pseudo'].">".$vResult['nom']." ".$vResult['prenom']." (".$vResult['pseudo'].")</option>";
                 }
                 echo"</select></td></tr>
