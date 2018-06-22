@@ -21,8 +21,8 @@
           $definitif = 'true';
         else $definitif='false';
 
-        $vSql = "INSERT INTO badge(titreBadge, descriptionBadge, duree, definitif )
-                  values('".$titre."', '".$description."', '".$duree."', '".$definitif."') ;"    ;
+        $vSql = "INSERT INTO badge(titreBadge, descriptionBadge, definitif, duree )
+                  values('".$titre."', '".$description."', '".$definitif."','".$duree."') ;"    ;
 
 
         $vQuery = pg_query($vConn, $vSql);
