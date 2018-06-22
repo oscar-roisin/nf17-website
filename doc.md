@@ -1,5 +1,9 @@
 # Documentation
-[Lien vers la page web](http://tuxa.sme.utc/~nf17p095/index.html)
+### Laurine Dictus, Zakaria Kaddache, Hugo Le Moine, Oscar Roisin
+
+### [Lien vers la page web](http://tuxa.sme.utc/~nf17p095/index.html)
+
+
 
 ## Accueil
 Liens vers les différentes pages de notre application, décrites ci-dessous.
@@ -10,11 +14,23 @@ Permet d'ajouter un nouvel utilisateur à la base de données. Certains champs d
 Un liste déroulante permet de sélectionner un utilisateur déjà existant et d'afficher ses informations.
 
 ## Annonce
-Permet d'insérer une annonce dans la base de donnée. La visualias
+Permet d'insérer une annonce dans la base de donnée. La visualisation d'une annonce dans une liste déroulante permet d'afficher les informations sur cette annonce, ainsi que les commentaires qui on été postés sur cette dernière. Un utilisateur peut voter favorablement ou défavorable pour une annonce. La liste des meilleures annonces peut être consultée dans les statistiques
 
+Les commentaires postés peuvent être likés (en choisissant un utilisateur pour effectuer cette action), et également être signalés en sélectionnant une raison.
+
+## Commentaire
+Permet d'ajouter un commentaire dans la base de donnée, en sélectionnant l'annonce concernée ainsi que l'utilisateur qui poste, accompagné du contenu du commentaire.
 
 ## Enseigne
+Permet d'ajouter une enseigne dans la base de donnée, en renseignant au minimum son nom.
 
+La visualisation permet, en sélectionnant une enseigne, de voir les informations la concernant.
+
+## Ajouter un badge
+Permet d'ajouter un nouveau badge dans la base de donnée.
+
+## Attribuer un badge
+Permet d'attribuer un badge à un utilisateur en les sélectionnant dans des listes déroulantes.
 
 ## Statistiques
 
@@ -25,7 +41,9 @@ Permet d'insérer une annonce dans la base de donnée. La visualias
 - Nombre de likes sur les commentaires
 
 #### Affichage de listes
+- Liste des annonces par votes
 - Liste des utilisateurs triés par nombre d'annonces postées
+- Liste des utilisateurs triés par nombre de commentaire postés
 
 ## Vues
 
