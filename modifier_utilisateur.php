@@ -19,7 +19,12 @@
                   values('$titre', '$pseudo') ;"    ;
 
 
-        $vQuery = pg_query($vConn, $vSql);
+        if(!$vQuery = pg_query($vConn, $vSql)){
+            echo "Erreur dans l'ajout du badge";
+        }
+        else {
+            echo "Badge correctement attribué";
+        }
 
         pg_close($vConn);
 
