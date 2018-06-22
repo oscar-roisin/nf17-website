@@ -60,11 +60,11 @@
                 <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
                 <tr><td>Commentaire</td><td>".$vResult2['texte']."</td></tr>
 
-                <tr><td><p>Utilisateur à utiliser pour signaler un commentaire</p></td>";
+                <tr><td><p>Utilisateur à utiliser pour liker un commentaire</p></td>";
                 $vSql ="SELECT * FROM utilisateur";
-                $vQuery=pg_query($vConn, $vSql);
+                $vQuery2=pg_query($vConn, $vSql);
                 echo"<td><select name='user'>";
-                while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+                while ($vResult = pg_fetch_array($vQuery2, null, PGSQL_ASSOC)) {
                 echo "<option value=".$vResult['pseudo'].">".$vResult['nom']." ".$vResult['prenom']." (".$vResult['pseudo'].")</option>";
                 }
                 echo"</select></td></tr>
