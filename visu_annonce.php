@@ -59,7 +59,7 @@
 
             $vSql ="SELECT * FROM commentaire WHERE idAnnonce=$id";
             $vQuery=pg_query($vConn, $vSql);
-            while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+            while ($vResult2 = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "
                 <table>
                 <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
