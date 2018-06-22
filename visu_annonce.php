@@ -71,7 +71,7 @@
 
 
             $vSql2 ="SELECT * FROM commentaire WHERE idAnnonce=$id";
-            if(!($vQuery2=pg_query($vConn, $vSql2)){
+            if(!$vQuery2=pg_query($vConn, $vSql2)){
                 echo "Erreur dans l'execution de la requête";
             }
 
