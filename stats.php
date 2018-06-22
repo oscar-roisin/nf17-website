@@ -5,7 +5,7 @@
         <title>Statistiques</title>
     </head>
     <body>
-		<a href="index.html">MENU</a>
+		<a href="index.html">MENU</a><br>
         <table>
             <?php
 
@@ -30,7 +30,7 @@
             $vQuery=pg_query($vConn, $vSql);
             $vResult = pg_fetch_array($vQuery, null, PGSQL_NUM);
             echo "<tr><td>Nombre de likes</td><td>".$vResult[0]."</td></tr>";
-
+            echo "<br>";
             $vSql ="SELECT pseudo, COUNT(idannonce) FROM Annonce a JOIN Utilisateur u ON a.pseudoUtilisateur=u.pseudo GROUP BY pseudo";
             $vQuery=pg_query($vConn, $vSql);
             echo "<table><tr><td>Pseudo</td><td>Annonces postées</td></tr>";
