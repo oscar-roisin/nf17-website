@@ -8,7 +8,7 @@
       <a href="index.html">MENU</a>
 
       <h1>Ajouter une Annonce</h1>
-      <form method="post" action="ajouter_annonce.php">
+      <form method="post" action="ajout_annonce.php">
         <p>
           <label for="titre_annonce"> Titre de l'annonce : </label>
           <input type="text" name="titre_annonce" id="titre_annonce" maxlength="30" required/>
