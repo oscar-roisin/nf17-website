@@ -49,8 +49,8 @@
             while ($vResult2 = pg_fetch_array($vQuery2, null, PGSQL_ASSOC)) {
                 echo "
                 <table>
-                <tr><td>Titre</td><td>".$vResult2['pseudo']."</td></tr>
-                <tr><td>Description</td><td>".$vResult2['texte']."</td></tr>
+                <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
+                <tr><td>Commentaire</td><td>".$vResult2['texte']."</td></tr>
                 </table>";
             }
             pg_close($vConn);
