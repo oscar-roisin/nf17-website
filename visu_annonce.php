@@ -70,11 +70,11 @@
 
                 <FORM METHOD='POST' ACTION='signalement.php'>";
 
-                echo"<p>Utilisateur à utiliser pour signaler un commentaire</p>";
+                echo"<tr><td><p>Utilisateur à utiliser pour signaler un commentaire</p></td>";
 
                 $vSql ="SELECT * FROM utilisateur";
                 $vQuery=pg_query($vConn, $vSql);
-                echo"<tr><td><select name='user'></td><td>";
+                echo"<td><select name='user'>";
                 while ($vResult3 = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "<option value=".$vResult3['pseudo'].">".$vResult3['nom']." ".$vResult3['prenom']." (".$vResult3['pseudo'].")</option>";
                 }
