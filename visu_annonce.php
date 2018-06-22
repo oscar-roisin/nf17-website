@@ -40,7 +40,7 @@
                 echo "</table>";
 
                 echo "<tr><td>Compteur</td><td>".$vResult['compteur']."</td></tr>
-                </table>"
+                </table>";
             }
             pg_close($vConn);
             ?>
