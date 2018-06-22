@@ -2,13 +2,13 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Liste des annonces bon plan</title>
+        <title>Liste des annonces bon application</title>
     </head>
     <body>
         <a href="index.html">MENU</a><br>
-        <h3>Liste des annonces code promo</h3>
+        <h3>Liste des annonces bon plan</h3>
         <table>
-            <tr><td>ID</td><td>Titre</td><td>Nouveau Prix</td></td>Nouveau Prix</td></tr>
+            <tr><td>ID</td><td>Titre</td><td>Nouveau Prix</td></td>Ancien Prix</td></tr>
           <?php
             $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
             $vSql = "SELECT idAnnonce, titreAnnonce, newPrice, initPrice FROM vAnnonceBA";

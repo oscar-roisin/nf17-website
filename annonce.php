@@ -9,6 +9,21 @@
 
       <h1>Ajouter une Annonce</h1>
       <form method="post" action="ajout_annonce.php">
+
+        <p>
+            <label for="pseudo">Pseudo de l'utilisateur :</label>
+            <select name="pseudo" required>
+            <?php
+                $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
+                $vSql ="SELECT pseudo FROM utilisateur";
+                $vQuery=pg_query($vConn, $vSql);
+                while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+                  echo "<option value=".$vResult['pseudo'].">".$vResult['pseudo']." </option>";
+                  }
+                pg_close($vConn);
+            ?>
+            </select>
+        </p>
         <p>
           <label for="type_annonce"> Type de l'annonce : </label>
           <select name="type_annonce" id="type_annonce"  required>

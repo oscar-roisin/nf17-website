@@ -24,6 +24,7 @@
                 <tr><td>Enseigne</td><td>".$vResult['nomenseigne']."</td></tr>
                 <tr><td>Type</td><td>".$vResult['type']."</td></tr>
                 <tr><td>Code</td><td>".$vResult['code']."</td></tr>
+                <tr><td>Utilisateur</td><td>".$vResult['pseudoutilisateur']."</td></tr>
                 <tr><td>Nouveau Prix</td><td>".$vResult['newprice']."</td></tr>
                 <tr><td>Prix initial</td><td>".$vResult['initprice']."</td></tr>
                 <tr><td>Frais de port</td><td>".$vResult['fraisport']."</td></tr>
@@ -82,7 +83,13 @@
                 }
                 echo"</select></td></tr>
                 <tr><td>Signalement</td><td><label for='raison_signalement'> Raison  : </label>
-                <input type='text' name='raison_signalement' id='raison_signalement' /><button type='submit' name='idcommentaire' value=".$vResult2['idcommentaire'].">Signaler</button></td></tr>
+                <select name='raison_signalement' id='raison_signalement'  required>
+                    <option value='Harcelement'> Harcelement </option>
+                    <option value='insultant'> Insultant </option>
+                    <option value='Incitation à la haine'> Incitation à la haine </option>
+                    <option value='diffamation'> Diffamation </option>
+                    <option value='autre' default> Autre </option>
+                </select><button type='submit' name='idcommentaire' value=".$vResult2['idcommentaire'].">Signaler</button></td></tr>
                 </form>
                 </table><br>------------------------------------------------------------------------------------<br>";
             }

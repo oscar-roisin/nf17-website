@@ -19,6 +19,7 @@
         $lien = $_POST['lien_annonce'];
         $date_debut = $_POST['date_debut_annonce'];
         $date_expiration = $_POST['date_expiration_annonce'];
+        $pseudo = $_POST['pseudo'];
 
         $etat = TRUE ;
         $active = TRUE;
@@ -33,9 +34,9 @@
 
         if($code == -1){
           $vSql = "INSERT INTO annonce(titreannonce, descriptionannonce, categorie,nomenseigne, type, lien,datedebut, dateexpiration, etat, active, compteur,
-                      newPrice, initPrice, fraisPort, photo)
+                      newPrice, initPrice, fraisPort, photo, pseudoutilisateur)
                     values('$titre ', '$description', '$categorie', '$enseigne', '$type', '$lien', '$date_debut', '$date_expiration', '$etat', '$active', '$compteur',
-                          '$new_price', '$old_price', '$port', '$image') ;"    ;
+                          '$new_price', '$old_price', '$port', '$image', $pseudo) ;"    ;
         }
         else{
           $vSql = "INSERT INTO annonce(titreannonce, descriptionannonce, categorie,nomenseigne, type, lien,datedebut, dateexpiration, etat, active, compteur,
