@@ -16,10 +16,10 @@
             while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "
                 <table>
-                <tr><td>Nom</td><td>".$vResult['pseudo']."</td></tr>
-                <tr><td>Web</td><td>".$vResult['nom']."</td></tr>
-                <tr><td>Mail</td><td>".$vResult['prenom']."</td></tr>
-                <tr><td>Telephone</td><td>".$vResult['datenaissance']."</td></tr>
+                <tr><td>Nom</td><td>".$vResult['nomenseigne']."</td></tr>
+                <tr><td>Web</td><td><a href='".$vResult['website']."'>".$vResult['website']."</td></tr>
+                <tr><td>Mail</td><td>".$vResult['email']."</td></tr>
+                <tr><td>Telephone</td><td>".$vResult['telephone']."</td></tr>
                 <tr><td>Adresse</td><td>".$vResult['localisationnumero']." ".$vResult['localisationrue']." ".$vResult['localisationcodepostal']." ".$vResult['localisationville']."</td></tr>
                 <tr><td>Pays</td><td>".$vResult['localisationpays']."</td></tr>
                 </table>";
