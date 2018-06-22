@@ -11,7 +11,7 @@
           Nom de l'enseigne:<br>
           <input type="text" name="nomenseigne"><br>
           Site web:<br>
-          <input type="text" name="website"><br>
+          <input type="url" name="website"><br>
           Email:<br>
           <input type="email" name="email"><br>
           Telephone:<br>
