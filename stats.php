@@ -31,6 +31,13 @@
             $vResult = pg_fetch_array($vQuery, null, PGSQL_NUM);
             echo "<tr><td>Nombre de likes</td><td>".$vResult[0]."</td></tr>";
 
+            $vSql ="SELECT pseudo, COUNT(idannonce) AS nbAnnonces FROM Annonce a JOIN Utilisateur u ON a.pseudoUtilisateur=u.pseudo GROUP BY pseudo";
+            $vQuery=pg_query($vConn, $vSql);
+            echo "<table><tr><td>Pseudo</td><td>Annonces postées</td></tr>";
+            while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+              echo "<tr><td>".$vResult['pseudo']"</td><td>".$vResult['nbAnnonces']."</td></tr>";
+              }
+            echo "</table>";
             pg_close($vConn);
             ?>
         </table>
