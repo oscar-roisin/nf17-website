@@ -48,16 +48,8 @@
             echo"<h1> Affichage des commentaires de l'annonce </h1>";
 
             echo"<FORM METHOD='POST' ACTION='liker.php'>";
-            echo"<h2>Utilisateur à utiliser pour liker/signaler un commentaire</h2>"
-            ;
 
-            $vSql ="SELECT * FROM utilisateur";
-            $vQuery=pg_query($vConn, $vSql);
-            echo"<select name='user'>";
-            while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
-            echo "<option value=".$vResult['pseudo'].">".$vResult['nom']." ".$vResult['prenom']." (".$vResult['pseudo'].")</option>";
-            }
-            echo"</select>";
+
 
             $vSql ="SELECT * FROM commentaire WHERE idAnnonce=$id";
             $vQuery=pg_query($vConn, $vSql);
@@ -67,6 +59,15 @@
                 <table>
                 <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
                 <tr><td>Commentaire</td><td>".$vResult2['texte']."</td></tr>
+
+                <tr><td><p>Utilisateur à utiliser pour signaler un commentaire</p></td>";
+                $vSql ="SELECT * FROM utilisateur";
+                $vQuery=pg_query($vConn, $vSql);
+                echo"<td><select name='user'>";
+                while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+                echo "<option value=".$vResult['pseudo'].">".$vResult['nom']." ".$vResult['prenom']." (".$vResult['pseudo'].")</option>";
+                }
+                echo"</select></td></tr>
                 <tr><td>Liker</td><td><button type='submit' name='idcommentaire' value=".$vResult2['idcommentaire'].">Liker</button></td></tr>
                 </form>
 
