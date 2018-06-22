@@ -45,10 +45,10 @@
 
             echo"<h1> Affichage des commentaires de l'annonce </h1>";
 
-            echo"<FORM METHOD='POST' ACTION='visu_user.php'>";
-            echo"<h2>Utilisateur à utiliser pour liker un commentaire</h2>"
+            echo"<FORM METHOD='POST' ACTION='liker.php'>";
+            echo"<h2>Utilisateur à utiliser pour liker/signaler un commentaire</h2>"
             ;
-            $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
+
             $vSql ="SELECT * FROM utilisateur";
             $vQuery=pg_query($vConn, $vSql);
             echo"<select name='user'>";
@@ -56,21 +56,39 @@
             echo "<option value=".$vResult['pseudo'].">".$vResult['nom']." ".$vResult['prenom']." (".$vResult['pseudo'].")</option>";
             }
             echo"</select>";
-            pg_close($vConn);
 
-            $vSql2 ="SELECT * FROM commentaire WHERE idAnnonce=$id";
-            $vQuery2=pg_query($vConn, $vSql2);
-            while ($vResult2 = pg_fetch_array($vQuery2, null, PGSQL_ASSOC)) {
+            $vSql ="SELECT * FROM commentaire WHERE idAnnonce=$id";
+            $vQuery=pg_query($vConn, $vSql);
+			echo "<h2>Commentaires</h2>";
+            while ($vResult2 = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "
                 <table>
                 <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
                 <tr><td>Commentaire</td><td>".$vResult2['texte']."</td></tr>
-                <tr><td>Liker</td><button type='submit' name='pseudo' value='".$vResult2['idcommentaire']."'>Liker</button></td></tr>
+                <tr><td>Liker</td><td><button type='submit' name='pseudo' value=".$vResult2['idcommentaire'].">Liker</button></td></tr>
+                </form>
+                
+                <FORM METHOD='POST' ACTION='signalement.php'>";
+
+                echo"<p>Utilisateur à utiliser pour signaler un commentaire</p>";
+
+                $vSql ="SELECT * FROM utilisateur";
+                $vQuery=pg_query($vConn, $vSql);
+                echo"<select name='user'>";
+                while ($vResult3 = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+                echo "<option value=".$vResult3['pseudo'].">".$vResult3['nom']." ".$vResult3['prenom']." (".$vResult3['pseudo'].")</option>";
+                }
+                echo"</select>
+                <tr><td>Signalement</td><td><label for='raison_signalement'> Raison  : </label>
+                <input type='text' name='raison_signalement' id='raison_signalement' /><button type='submit' name='pseudosignal' value=".$vResult2['idcommentaire'].">Signaler</button></td></tr>
+
                 </table>";
             }
 
             pg_close($vConn);
             ?>
         </form>
+        <a href="annonce.php">Retour Annonce</a><br>
+        <a href="index.html">MENU</a>
     </body>
 </html>

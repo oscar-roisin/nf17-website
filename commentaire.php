@@ -16,9 +16,9 @@
               $vQuery=pg_query($connexion, $annonce);
               echo"<select name='annonce'>";
               while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
-                echo "<option value=".$vResult[idAnnonce]."> ".$vResult[titreannonce]."</option>";
+                echo "<option value=".$vResult[idannonce]."> ".$vResult[titreannonce]."</option>";
                 }
-              echo"<select/>";
+              echo"</select>";
 
               $user = "SELECT * FROM utilisateur";
               $vQuery2=pg_query($connexion, $user);
@@ -28,7 +28,7 @@
               while ($vResult2 = pg_fetch_array($vQuery2, null, PGSQL_ASSOC)) {
                  echo "<option value=".$vResult2[pseudo]."> ".$vResult2[nom]." ".$vResult2[prenom]."</option>";
                  }
-              echo"<select/>";
+              echo"</select>";
               pg_close($connexion);
             ?>
 
