@@ -88,7 +88,7 @@
                     <option value='insultant'> Insultant </option>
                     <option value='Incitation à la haine'> Incitation à la haine </option>
                     <option value='diffamation'> Diffamation </option>
-                    <option value='autre' default> Autre </option>
+                    <option value='autre' selected> Autre </option>
                 </select><button type='submit' name='idcommentaire' value=".$vResult2['idcommentaire'].">Signaler</button></td></tr>
                 </form>
                 </table><br>------------------------------------------------------------------------------------<br>";
