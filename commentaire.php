@@ -16,7 +16,7 @@
               $vQuery=pg_query($connexion, $annonce);
               echo"<select name='annonce'>";
               while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
-                echo "<option value=".$vResult[idAnnonce]."> ".$vResult[titreannonce]."</option>";
+                echo "<option value=".$vResult[idannonce]."> ".$vResult[titreannonce]."</option>";
                 }
               echo"</select>";
 

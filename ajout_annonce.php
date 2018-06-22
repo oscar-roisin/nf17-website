@@ -24,8 +24,23 @@
         $active = TRUE;
         $compteur = 0;
 
-        $vSql = "INSERT INTO annonce(titreannonce, descriptionannonce, categorie,nomenseigne, type, lien,datedebut, dateexpiration, etat, active, compteur)
-                  values('$titre ', '$description', '$categorie', '$enseigne', '$type', '$lien', '$date_debut', '$date_expiration', '$etat', '$active', '$compteur') ;"    ;
+        $code = $_POST['code_annonce'];
+        $new_price = $_POST['new_price_annonce'];
+        $old_price = $_POST['old_price_annonce'];
+        $port = $_POST['port_annonce'];
+
+        if($code == -1){
+          $vSql = "INSERT INTO annonce(titreannonce, descriptionannonce, categorie,nomenseigne, type, lien,datedebut, dateexpiration, etat, active, compteur,
+                      newPrice, initPrice, fraisPort)
+                    values('$titre ', '$description', '$categorie', '$enseigne', '$type', '$lien', '$date_debut', '$date_expiration', '$etat', '$active', '$compteur',
+                          '$new_price', '$old_price', '$port') ;"    ;
+        }
+        else{
+          $vSql = "INSERT INTO annonce(titreannonce, descriptionannonce, categorie,nomenseigne, type, lien,datedebut, dateexpiration, etat, active, compteur,
+                      code)
+                    values('$titre ', '$description', '$categorie', '$enseigne', '$type', '$lien', '$date_debut', '$date_expiration', '$etat', '$active', '$compteur',
+                          '$code') ;"    ;
+        }
 
         $vQuery = pg_query($vConn, $vSql);
 
