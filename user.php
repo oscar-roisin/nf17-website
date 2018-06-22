@@ -5,6 +5,7 @@
         <title>Page User</title>
     </head>
     <body>
+		<a href="index.html">MENU</a>
       <h1>Utilisateurs</h1>
       <h2>Ajout</h2>
         <form METHOD='POST' ACTION='ajout_utilisateur.php' >
@@ -45,6 +46,5 @@
           ?>
           <input type="submit" name="visu_utilisateur">
         </form>
-        <a href="index.html">MENU</a>
     </body>
 </html>
