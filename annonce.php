@@ -50,5 +50,21 @@
         <input type="submit" value="Envoyer" />
       </form>
 
+      <h1>Visualisation</h1>
+        <FORM METHOD='POST' ACTION='visu_annonce.php' >
+          <?php
+          $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
+          $vSql ="SELECT * FROM annonces";
+          $vQuery=pg_query($vConn, $vSql);
+          echo"<select name='annonce'>";
+          while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+            echo "<option value=".$vResult['idannonce'].">".$vResult['titreannonce']." </option>";
+            }
+            echo"</select>";
+          pg_close($vConn);
+          ?>
+          <input type="submit" name="visu_annonce">
+        </form>
+
     </body>
 </html>
