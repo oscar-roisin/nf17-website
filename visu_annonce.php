@@ -47,27 +47,27 @@
 
             echo"<h1> Affichage des commentaires de l'annonce </h1>";
 
-            echo"<FORM METHOD='POST' ACTION='liker.php'>";
-            echo"<h2>Utilisateur à utiliser pour liker/signaler un commentaire</h2>"
-            ;
 
-            $vSql ="SELECT * FROM utilisateur";
-            $vQuery=pg_query($vConn, $vSql);
-            echo"<select name='user'>";
-            while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
-            echo "<option value=".$vResult['pseudo'].">".$vResult['nom']." ".$vResult['prenom']." (".$vResult['pseudo'].")</option>";
-            }
-            echo"</select>";
-
-            $vSql ="SELECT * FROM commentaire WHERE idAnnonce=$id";
-            $vQuery=pg_query($vConn, $vSql);
+            $vSql2 ="SELECT * FROM commentaire WHERE idAnnonce=$id";
+            $vQuery2=pg_query($vConn, $vSql2);
 			echo "<h2>Commentaires</h2>";
-            while ($vResult2 = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+            while ($vResult2 = pg_fetch_array($vQuery2, null, PGSQL_ASSOC)) {
                 echo "
                 <table>
                 <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
+                <tr><td>Date</td><td>".$vResult2['dateparution']."</td></tr>
                 <tr><td>Commentaire</td><td>".$vResult2['texte']."</td></tr>
-                <tr><td>Liker</td><td><button type='submit' name='pseudo' value=".$vResult2['idCommentaire'].">Liker</button></td></tr>
+
+                <tr><td><p>Utilisateur à utiliser pour liker un commentaire</p></td>";
+                echo"<FORM METHOD='POST' ACTION='liker.php'>";
+                $vSql ="SELECT * FROM utilisateur";
+                $vQuery=pg_query($vConn, $vSql);
+                echo"<td><select name='user'>";
+                while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+                echo "<option value=".$vResult['pseudo'].">".$vResult['nom']." ".$vResult['prenom']." (".$vResult['pseudo'].")</option>";
+                }
+                echo"</select></td></tr>
+                <tr><td>Liker</td><td><button type='submit' name='idcommentaire' value=".$vResult2['idcommentaire'].">Liker</button></td></tr>
                 </form>
 
                 <FORM METHOD='POST' ACTION='signalement.php'>";
@@ -82,13 +82,13 @@
                 }
                 echo"</select></td></tr>
                 <tr><td>Signalement</td><td><label for='raison_signalement'> Raison  : </label>
-                <input type='text' name='raison_signalement' id='raison_signalement' /><button type='submit' name='pseudosignal' value=".$vResult2['idCommentaire'].">Signaler</button></td></tr>
-
-                </table>";
+                <input type='text' name='raison_signalement' id='raison_signalement' /><button type='submit' name='idcommentaire' value=".$vResult2['idcommentaire'].">Signaler</button></td></tr>
+                </form>
+                </table><br>------------------------------------------------------------------------------------<br>";
             }
 
             pg_close($vConn);
             ?>
-        </form>
+
     </body>
 </html>
