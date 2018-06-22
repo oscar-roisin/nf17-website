@@ -21,7 +21,7 @@
 
         <p>
           <label class = "duree_badge" for="duree_badge"> Nombre de Jour avant Expiration : </label>
-          <input class = "duree_badge" type="number" name="duree_badge" id="duree_badge" placeholder=0/>
+          <input class = "duree_badge" type="number" name="duree_badge" id="duree_badge" placeholder=0>
         </p>
 
 
