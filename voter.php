@@ -11,9 +11,11 @@
       <?php
         $pseudo = $_POST['user'];
         $idannonce = $_POST['idannonce'];
+        if($_POST['-1']) $value = -1;
+        else $value =1;
 
         $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
-        $vSql = "INSERT INTO Vote VALUES ('".$pseudo."','".$idannonce."',1,now());";
+        $vSql = "INSERT INTO Vote VALUES ('".$pseudo."','".$idannonce."','".$value."',now());";
         $vQuery = pg_query($vConn, $vSql);
         pg_close($vConn);
 
