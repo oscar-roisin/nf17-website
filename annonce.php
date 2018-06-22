@@ -15,7 +15,7 @@
         </p>
         <p>
           <label for="description_annonce"> Description de l'annonce : </label>
-          <input type="text" name="description_annonce" id="description_annonce" />
+          <input type="text" name="description_annonce" id="description_annonce" required/>
         </p>
         <p>
           <label for="categorie_annonce"> Categorie de l'annonce : </label>
@@ -49,6 +49,22 @@
 
         <input type="submit" value="Envoyer" />
       </form>
+
+      <h1>Visualisation</h1>
+        <FORM METHOD='POST' ACTION='visu_annonce.php' >
+          <?php
+          $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
+          $vSql ="SELECT * FROM annonce";
+          $vQuery=pg_query($vConn, $vSql);
+          echo"<select name='id'>";
+          while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+            echo "<option value=".$vResult['idannonce'].">".$vResult['titreannonce']." </option>";
+            }
+            echo"</select>";
+          pg_close($vConn);
+          ?>
+          <input type="submit" name="visu_annonce">
+        </form>
 
     </body>
 </html>

@@ -9,24 +9,24 @@
       <h2>Ajout</h2>
         <form METHOD='POST' ACTION='ajout_utilisateur.php' >
           Pseudo:<br>
-          <input type="text" name="pseudo"><br>
+          <input type="text" name="pseudo" required><br>
           NOM:<br>
-          <input type="text" name="nom"><br>
+          <input type="text" name="nom" required><br>
           Prenom:<br>
-          <input type="text" name="prenom"><br>
+          <input type="text" name="prenom" required><br>
           Date de naissance:<br>
           <input type="date" name="naissance"><br>
           Password:<br>
-          <input type="password" name="mdp"><br>
+          <input type="password" name="mdp" required><br>
           Adresse:<br>
           N°<input type="number" name="num_adresse">
-          Rue<input type="text" name"rue_adresse"><br>
+          Rue<input type="text" name="rue_adresse"><br>
           CP<input type="number" name="cp_adresse">
           Ville<input type="text" name="ville_adresse"><br>
           Pays<input <type="text" name="pays_adresse"><br>
           Type:<br>
-          <input type="radio" name="type" value="utilisateur" checked> Utilisateur<br>
-          <input type="radio" name="type" value="administrateur"> Administrateur<br>
+          <input type="radio" name="type" value="Utilisateur" checked> Utilisateur<br>
+          <input type="radio" name="type" value="Administrateur"> Administrateur<br>
           <input type="submit" name="ajout_utilisateur">
           <input type="reset">
         </form>
