@@ -35,7 +35,7 @@
 
             echo "<h4>Liste des utilisateurs triés par nombre d'annonces postées</h4>";
 
-            $vSql ="SELECT pseudo, COUNT(idannonce) as nbAnnonces FROM Annonce a JOIN Utilisateur u ON a.pseudoUtilisateur=u.pseudo GROUP BY pseudo ORDER BY nbAnnonces";
+            $vSql ="SELECT u.pseudo, COUNT(idannonce) as nbAnnonces FROM Annonce a JOIN Utilisateur u ON a.pseudoUtilisateur=u.pseudo GROUP BY pseudo ORDER BY nbAnnonces";
             $vQuery=pg_query($vConn, $vSql);
             echo "<table><tr><td>Pseudo</td><td>Annonces postées</td></tr>";
             while ($vResult = pg_fetch_array($vQuery, null, PGSQL_NUM)) {
