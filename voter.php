@@ -18,10 +18,12 @@
         if(!$vQuery = pg_query($vConn, $vSql)){
             echo "Erreur dans l'execution de la requête";
         }
+        else{
+            echo "Vote correctement enregistré";
+        }
         pg_close($vConn);
 
       ?>
-      <p>Vote envoyé.</p>
 
     </body>
 </html>
