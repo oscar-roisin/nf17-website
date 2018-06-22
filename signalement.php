@@ -2,12 +2,10 @@
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>Ajouter un like</title>
+        <title>Ajouter un signalement</title>
     </head>
     <body>
 
-      <a href="index.html">MENU</a>
-      <a href="annonce.php">Retour aux annonces</a>
       <?php
         $pseudo = $_POST['user'];
         $raison = $_POST['raison_signalement'];
@@ -20,5 +18,9 @@
         pg_close($vConn);
 
       ?>
+      
+      <p>Commentaire signalé.</p>
+      <a href="index.html">MENU</a>
+      <a href="annonce.php">Retour aux annonces</a><br>
     </body>
 </html>
