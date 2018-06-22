@@ -20,7 +20,7 @@
           <input type="password" name="mdp"><br>
           Adresse:<br>
           N°<input type="number" name="num_adresse">
-          Rue<input type="text" name"rue_adresse"><br>
+          Rue<input type="text" name="rue_adresse"><br>
           CP<input type="number" name="cp_adresse">
           Ville<input type="text" name="ville_adresse"><br>
           Pays<input <type="text" name="pays_adresse"><br>
