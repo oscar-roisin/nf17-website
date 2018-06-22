@@ -24,6 +24,7 @@
                 <tr><td>Enseigne</td><td>".$vResult['nomenseigne']."</td></tr>
                 <tr><td>Type</td><td>".$vResult['type']."</td></tr>
                 <tr><td>Code</td><td>".$vResult['code']."</td></tr>
+                <tr><td>Utilisateur</td><td>".$vResult['pseudoutilisateur']."</td></tr>
                 <tr><td>Nouveau Prix</td><td>".$vResult['newprice']."</td></tr>
                 <tr><td>Prix initial</td><td>".$vResult['initprice']."</td></tr>
                 <tr><td>Frais de port</td><td>".$vResult['fraisport']."</td></tr>
