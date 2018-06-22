@@ -15,14 +15,16 @@
         $titre = $_POST['titre_badge'];
         $description = $_POST['description_badge'];
         $duree = $_POST['duree_badge'];
+
         if ($duree<0)
           $duree=0;
-        if ($duree=0)
-          $definitif = 'true';
-        else $definitif='false';
 
-        $vSql = "INSERT INTO badge(titreBadge, descriptionBadge, duree, definitif )
-                  values('".$titre."', '".$description."', '".$duree."', '".$definitif."') ;"    ;
+        if ($duree==0)
+          {$definitif = 'true'; $duree=0;}
+        else $definitif='false';
+        
+        $vSql = "INSERT INTO badge(titreBadge, descriptionBadge, definitif, duree )
+                  values('".$titre."', '".$description."', '".$definitif."','".$duree."') ;"    ;
 
 
         if(!$vQuery = pg_query($vConn, $vSql)){
