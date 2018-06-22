@@ -31,7 +31,9 @@
           <?php
           $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
           $vSql ="SELECT * FROM enseigne";
-          $vQuery=pg_query($vConn, $vSql);
+          if(!$vQuery = pg_query($vConn, $vSql)){
+              echo "Erreur dans l'execution de la requête";
+          }
           echo"<select name='nomenseigne'>";
           while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
             echo "<option value='".$vResult['nomenseigne']."'>".$vResult['nomenseigne']."</option>";
@@ -41,6 +43,6 @@
           ?>
           <input type="submit" name="visu_enseigne">
         </form>
-        
+
     </body>
 </html>

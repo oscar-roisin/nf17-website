@@ -14,7 +14,9 @@
             <?php $connexion = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
 
               $annonce = "SELECT * FROM annonce";
-              $vQuery=pg_query($connexion, $annonce);
+              if(!$vQuery=pg_query($connexion, $annonce)){
+                  echo "Erreur dans l'execution de la requête";
+              }
               echo"<select name='annonce'>";
               while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "<option value=".$vResult[idannonce]."> ".$vResult[titreannonce]."</option>";
@@ -22,7 +24,9 @@
               echo"</select>";
 
               $user = "SELECT * FROM utilisateur";
-              $vQuery2=pg_query($connexion, $user);
+              if(!$vQuery2=pg_query($connexion, $user)){
+                  echo "Erreur dans l'exection de la requête";
+              }
 
               echo "<br>Utilisateur : <br>";
               echo"<select name='user'>";
@@ -39,6 +43,6 @@
               <input type="submit" name="ajout_commentaire">
               <input type="reset">
             </FORM>
-            
+
     </body>
 </html>

@@ -10,9 +10,14 @@
       <?php
       $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
       $vSql ="INSERT INTO commentaire(pseudo, idAnnonce, texte) VALUES ('".$_POST['user']."','".$_POST['annonce']."','".$_POST['commentaire']."');";
-      $vQuery=pg_query($vConn, $vSql);
+      if(!$vQuery=pg_query($vConn, $vSql)){
+          echo "Erreur dans l'ajout du commentaire";
+      }
+      else{
+          echo "Commentaire coment ajouté";
+      }
       ?>
-      
-      
+
+
     </body>
 </html>
