@@ -13,7 +13,7 @@
             $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
             $vSql = "SELECT pseudo, nom, prenom FROM vAnnonceCP";
             $vQuery = pg_query($vConn, $vSql);
-            while ($vResult = pg_fetch_array($vQuery, null, PGSQL_NUM)) {
+            while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOS)) {
                 echo "<tr><td>".$vResult['idAnnonce']."</td><td>".$vResult['titreAnnonce']."</td><td>".$vResult['code']."</tr>";
             }
             pg_close($vConn);
