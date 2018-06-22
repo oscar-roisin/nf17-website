@@ -15,8 +15,12 @@
         $titre = $_POST['titre_badge'];
         $description = $_POST['description_badge'];
         $duree = $_POST['duree_badge'];
+        if ($duree<0)
+          $duree=0;
+        if ($duree=0)
+          $definitif = 1;
+        else $definitf=0;
 
-        $definitif = !$duree;
         $vSql = "INSERT INTO badge(titreBadge, descriptionBadge, duree, definitif )
                   values('".$titre."', '".$description."', '".$duree."', '".$definitif."') ;"    ;
 
