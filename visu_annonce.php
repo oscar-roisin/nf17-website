@@ -30,15 +30,14 @@
                 <tr><td>Date d'expiration</td><td>".$vResult['dateexpiration']."</td></tr>
 
                 <tr><td>Etat</td><td>";
-                if($vResult[etat]) echo "Validée";
+                if($vResult['etat']) echo "Validée";
                 else echo "En attente de validation";
                 echo"</td></tr>
 
-                <tr><td>Active<";
-                if($vResult[active]) echo "En cours";
+                <tr><td>Active</td><td>";
+                if($vResult['active']) echo "En cours";
                 else echo "Expirée";
-                echo "</table>";
-
+                echo"</td></tr>";
                 echo "<tr><td>Compteur</td><td>".$vResult['compteur']."</td></tr>
                 </table>";
             }
