@@ -55,7 +55,7 @@
                 echo "
                 <table>
                 <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
-                <tr><td>Date</td><td>".$vResult2['dateParution']."</td></tr>
+                <tr><td>Date</td><td>".$vResult2['dateparution']."</td></tr>
                 <tr><td>Commentaire</td><td>".$vResult2['texte']."</td></tr>
 
                 <tr><td><p>Utilisateur à utiliser pour liker un commentaire</p></td>";
