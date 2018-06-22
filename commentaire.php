@@ -5,6 +5,7 @@
         <title>Page Commentaire</title>
     </head>
     <body>
+		<a href="index.html">MENU</a>
         <h1> Commentaires </h1>
           <h2> Ajout </h2>
           <FORM METHOD='POST' ACTION='ajout_commentaire.php'>
@@ -38,6 +39,6 @@
               <input type="submit" name="ajout_commentaire">
               <input type="reset">
             </FORM>
-            <a href="index.html">MENU</a>
+            
     </body>
 </html>

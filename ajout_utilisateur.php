@@ -5,6 +5,8 @@
         <title>Page Ajout User</title>
     </head>
     <body>
+		<a href="index.html">MENU</a>
+		<a href="user.php">Retour Utilisateur</a><br>
       <?php
       $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
       $vSql ="INSERT INTO utilisateur(pseudo, nom, prenom, datenaissance, mdp, adresse_numero, adresse_rue, adresse_codepostal,
@@ -12,7 +14,5 @@
               '".$_POST['mdp']."','".$_POST['num_adresse']."','".$_POST['rue_adresse']."','".$_POST['cp_adresse']."','".$_POST['ville_adresse']."','".$_POST['pays_adresse']."','".$_POST['type']."')";
       $vQuery=pg_query($vConn, $vSql);
       ?>
-      <a href="user.php">Retour Utilisateur</a><br>
-      <a href="index.html">MENU</a>
     </body>
 </html>
