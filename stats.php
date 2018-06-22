@@ -13,7 +13,7 @@
             $vSql ="SELECT COUNT(*) AS nbAnnonces FROM Annonce";
             $vQuery=pg_query($vConn, $vSql);
             $vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC);
-            echo "<tr><td>Nombre d'annonces</td><td>".$vResult[0]."</td></tr>";
+            echo "<tr><td>Nombre d'annonces</td><td>".$vResult[nbAnnonces]."</td></tr>";
 
             $vSql ="SELECT COUNT(*) AS nbUtilisateurs FROM Utilisateur";
             $vQuery=pg_query($vConn, $vSql);
