@@ -5,7 +5,7 @@
         <title>Statistiques</title>
     </head>
     <body>
-		<a href="index.html">MENU</a>
+		<a href="index.html">MENU</a><br>
         <table>
             <?php
 
