@@ -43,15 +43,34 @@
                 else echo "Expirée";
                 echo"</td></tr>";
                 echo "<tr><td>Compteur</td><td>".$vResult['compteur']."</td></tr>
+
+                <tr><td><p>Utilisateur à utiliser pour voter pour l'annonce</p></td>";
+                echo"<FORM METHOD='POST' ACTION='voter.php'>";
+                $vSql1 ="SELECT * FROM utilisateur";
+                $vQuery1=pg_query($vConn, $vSql1);
+                echo"<td><select name='user'>";
+                while ($vResult1 = pg_fetch_array($vQuery1, null, PGSQL_ASSOC)) {
+                echo "<option value=".$vResult1['pseudo'].">".$vResult1['nom']." ".$vResult1['prenom']." (".$vResult1['pseudo'].")</option>";
+                }
+                echo"</select></td></tr>
+                <tr><td><button type='submit' name='+1' value=".$vResult['idannonce'].">+1</button></td>
+                <td><button type='submit' name='-1' value=".$vResult['idannonce'].">-1</button></td></tr>
+
+                </form>
+
                 </table>";
             }
+
+
 
             echo"<h1> Affichage des commentaires de l'annonce </h1>";
 
 
             $vSql2 ="SELECT * FROM commentaire WHERE idAnnonce=$id";
             $vQuery2=pg_query($vConn, $vSql2);
-			echo "<h2>Commentaires</h2>";
+
+
+      echo "<h2>Commentaires</h2>";
             while ($vResult2 = pg_fetch_array($vQuery2, null, PGSQL_ASSOC)) {
                 echo "
                 <table>
