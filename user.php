@@ -25,8 +25,8 @@
           Ville<input type="text" name="ville_adresse"><br>
           Pays<input <type="text" name="pays_adresse"><br>
           Type:<br>
-          <input type="radio" name="type" value="utilisateur" checked> Utilisateur<br>
-          <input type="radio" name="type" value="administrateur"> Administrateur<br>
+          <input type="radio" name="type" value="Utilisateur" checked> Utilisateur<br>
+          <input type="radio" name="type" value="Administrateur"> Administrateur<br>
           <input type="submit" name="ajout_utilisateur">
           <input type="reset">
         </form>
