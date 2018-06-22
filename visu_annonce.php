@@ -5,6 +5,7 @@
         <title>Liste utilisateurs</title>
     </head>
     <body>
+            <h1> Affichage de l'annonce </h1>
             <?php
 
             $id = $_POST['id'];
@@ -30,19 +31,46 @@
                 <tr><td>Date d'expiration</td><td>".$vResult['dateexpiration']."</td></tr>
 
                 <tr><td>Etat</td><td>";
-                if($vResult[etat]) echo "Validée";
+                if($vResult['etat']) echo "Validée";
                 else echo "En attente de validation";
                 echo"</td></tr>
 
-                <tr><td>Active<";
-                if($vResult[active]) echo "En cours";
+                <tr><td>Active</td><td>";
+                if($vResult['active']) echo "En cours";
                 else echo "Expirée";
-                echo "</table>";
-
+                echo"</td></tr>";
                 echo "<tr><td>Compteur</td><td>".$vResult['compteur']."</td></tr>
                 </table>";
             }
+
+            echo"<h1> Affichage des commentaires de l'annonce </h1>";
+
+            echo"<FORM METHOD='POST' ACTION='visu_user.php'>";
+            echo"<h2>Utilisateur à utiliser pour liker un commentaire</h2>"
+            ;
+            $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
+            $vSql ="SELECT * FROM utilisateur";
+            $vQuery=pg_query($vConn, $vSql);
+            echo"<select name='user'>";
+            while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+            echo "<option value=".$vResult['pseudo'].">".$vResult['nom']." ".$vResult['prenom']." (".$vResult['pseudo'].")</option>";
+            }
+            echo"</select>";
+            pg_close($vConn);
+
+            $vSql2 ="SELECT * FROM commentaire WHERE idAnnonce=$id";
+            $vQuery2=pg_query($vConn, $vSql2);
+            while ($vResult2 = pg_fetch_array($vQuery2, null, PGSQL_ASSOC)) {
+                echo "
+                <table>
+                <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
+                <tr><td>Commentaire</td><td>".$vResult2['texte']."</td></tr>
+                <tr><td>Liker</td><button type='submit' name='pseudo' value='".$vResult2['idcommentaire']."'>Liker</button></td></tr>
+                </table>";
+            }
+
             pg_close($vConn);
             ?>
+        </form>
     </body>
 </html>
