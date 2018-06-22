@@ -54,7 +54,7 @@
         <FORM METHOD='POST' ACTION='visu_annonce.php' >
           <?php
           $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
-          $vSql ="SELECT * FROM annonces";
+          $vSql ="SELECT * FROM annonce";
           $vQuery=pg_query($vConn, $vSql);
           echo"<select name='id'>";
           while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
