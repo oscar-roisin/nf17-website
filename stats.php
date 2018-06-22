@@ -33,7 +33,7 @@
 
             echo "</table><br>";
 
-            echo "<h4>Liste des utilisateurs triés par nombre d'annonces postées</h4>"
+            echo "<h4>Liste des utilisateurs triés par nombre d'annonces postées</h4>";
 
             $vSql ="SELECT pseudo, COUNT(idannonce) as nbAnnonces FROM Annonce a JOIN Utilisateur u ON a.pseudoUtilisateur=u.pseudo GROUP BY pseudo ORDER BY nbAnnonces";
             $vQuery=pg_query($vConn, $vSql);
@@ -42,7 +42,7 @@
               echo "<tr><td>".$vResult[0]."</td><td>".$vResult[1]."</td></tr>";
               }
 
-            echo "<br><h4>Liste des utilisateurs triés par nombre de commentaires postés</h4>"
+            echo "<br><h4>Liste des utilisateurs triés par nombre de commentaires postés</h4>";
 
             $vSql ="SELECT pseudo, COUNT(idCommentaire) as nbCommentaires FROM Commentaire c JOIN Utilisateur u ON c.pseudo=u.pseudo GROUP BY pseudo ORDER BY nbCommentaires";
             $vQuery=pg_query($vConn, $vSql);

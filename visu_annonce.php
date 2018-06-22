@@ -47,9 +47,6 @@
 
             echo"<h1> Affichage des commentaires de l'annonce </h1>";
 
-            echo"<FORM METHOD='POST' ACTION='liker.php'>";
-
-
 
             $vSql2 ="SELECT * FROM commentaire WHERE idAnnonce=$id";
             $vQuery2=pg_query($vConn, $vSql2);
@@ -58,9 +55,11 @@
                 echo "
                 <table>
                 <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
+                <tr><td>Date</td><td>".$vResult2['dateParution']."</td></tr>
                 <tr><td>Commentaire</td><td>".$vResult2['texte']."</td></tr>
 
                 <tr><td><p>Utilisateur à utiliser pour liker un commentaire</p></td>";
+                echo"<FORM METHOD='POST' ACTION='liker.php'>";
                 $vSql ="SELECT * FROM utilisateur";
                 $vQuery=pg_query($vConn, $vSql);
                 echo"<td><select name='user'>";
@@ -84,12 +83,12 @@
                 echo"</select></td></tr>
                 <tr><td>Signalement</td><td><label for='raison_signalement'> Raison  : </label>
                 <input type='text' name='raison_signalement' id='raison_signalement' /><button type='submit' name='idcommentaire' value=".$vResult2['idcommentaire'].">Signaler</button></td></tr>
-
-                </table>";
+                </form>
+                </table><br>------------------------------------------------------------------------------------<br>";
             }
 
             pg_close($vConn);
             ?>
-        </form>
+
     </body>
 </html>
