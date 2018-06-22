@@ -14,7 +14,7 @@
             $vQuery=pg_query($vConn, $vSql);
             $vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC);
             $Result=pg_fetch_row($vResult);
-            echo "<tr><td>Nombre d'annonces</td><td>".$Result[nbAnnonces]."</td></tr>";
+            echo "<tr><td>Nombre d'annonces</td><td>".$Result[1]."</td></tr>";
 
             $vSql ="SELECT COUNT(*) AS nbUtilisateurs FROM Utilisateur";
             $vQuery=pg_query($vConn, $vSql);
@@ -26,7 +26,7 @@
             $vQuery=pg_query($vConn, $vSql);
             $Result=pg_fetch_row($vResult);
             $vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC);
-            echo "<tr><td>Nombre de commentaires</td><td>".$Result."</td></tr>";
+            echo "<tr><td>Nombre de commentaires</td><td>".$Result[nbCommentaires]."</td></tr>";
 
             $vSql ="SELECT COUNT(*) AS nbLikes FROM Liker";
             $vQuery=pg_query($vConn, $vSql);
