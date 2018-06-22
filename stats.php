@@ -16,6 +16,11 @@
             $vResult = pg_fetch_array($vQuery, null, PGSQL_NUM);
             echo "<tr><td>Nombre d'annonces</td><td>".$vResult[0]."</td></tr>";
 
+            $vSql ="SELECT COUNT(*) FROM Vote";
+            $vQuery=pg_query($vConn, $vSql);
+            $vResult = pg_fetch_array($vQuery, null, PGSQL_NUM);
+            echo "<tr><td>Nombre de votes</td><td>".$vResult[0]."</td></tr>";
+
             $vSql ="SELECT COUNT(*) FROM Utilisateur";
             $vQuery=pg_query($vConn, $vSql);
             $vResult = pg_fetch_array($vQuery, null, PGSQL_NUM);
@@ -57,7 +62,7 @@
 
             $vSql ="SELECT u.pseudo, COUNT(idCommentaire) as nbCommentaires FROM Commentaire c JOIN Utilisateur u ON c.pseudo=u.pseudo GROUP BY u.pseudo ORDER BY nbCommentaires DESC";
             $vQuery=pg_query($vConn, $vSql);
-            echo "<table><tr><td>Pseudo</td><td>Commentaires postées</td></tr>";
+            echo "<table><tr><td>Pseudo</td><td>Commentaires postés</td></tr>";
             while ($vResult = pg_fetch_array($vQuery, null, PGSQL_NUM)) {
               echo "<tr><td>".$vResult[0]."</td><td>".$vResult[1]."</td></tr>";
               }
