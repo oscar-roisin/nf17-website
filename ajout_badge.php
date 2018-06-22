@@ -17,7 +17,7 @@
         $duree = $_POST['duree_badge'];
         if ($duree<0)
           $duree=0;
-        if ($duree=0)
+        if ($duree==0)
           $definitif = 'true';
         else $definitif='false';
 
