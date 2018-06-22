@@ -9,3 +9,4 @@
 ## Implémentations à réaliser
 - Ajouter les vues
 - Expirer/liker un commentaire
+- Supprimer utilisateur/annonce/commentaire/enseigne

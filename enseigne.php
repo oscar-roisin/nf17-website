@@ -13,7 +13,7 @@
           Site web:<br>
           <input type="text" name="website"><br>
           Email:<br>
-          <input type="text" name="email"><br>
+          <input type="mail" name="email"><br>
           Telephone:<br>
           <input type="text" name="telephone"><br>
           Rue:<br>
