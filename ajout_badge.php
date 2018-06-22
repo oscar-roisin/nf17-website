@@ -20,7 +20,7 @@
           $duree=0;
 
         if ($duree==0)
-          $definitif = 'true';
+          {$definitif = 'true'; $duree=0}
         else $definitif='false';
         echo"$duree<br>";
         $vSql = "INSERT INTO badge(titreBadge, descriptionBadge, definitif, duree )
