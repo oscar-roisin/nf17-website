@@ -66,7 +66,7 @@
                 <tr><td>Commentaire</td><td>".$vResult2['texte']."</td></tr>
                 <tr><td>Liker</td><td><button type='submit' name='pseudo' value='".$vResult2['idcommentaire']."'>Liker</button></td></tr>
                 </form>
-                <FORM METHOD='POST' ACTION='signaler.php'>
+                <FORM METHOD='POST' ACTION='signalement.php'>
                 <tr><td>Signalement</td><td><button type='submit' name='pseudosignal' value='".$vResult2['idcommentaire']."'><label for='raison_signalement'> Raison  : </label>
                 <input type='text' name='raison_signalement' id='raison_signalement' />Signaler</button></td></tr>
 
