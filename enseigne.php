@@ -13,7 +13,7 @@
           Site web:<br>
           <input type="text" name="website"><br>
           Email:<br>
-          <input type="mail" name="email"><br>
+          <input type="email" name="email"><br>
           Telephone:<br>
           <input type="text" name="telephone"><br>
           Rue:<br>
@@ -23,7 +23,7 @@
           Ville<br>
           <input type="text" name="localisationville"><br>
           Pays<br>
-          <input type="text" name"localisationpays"><br>
+          <input type="text" name="localisationpays"><br>
           <input type="submit" name="ajout_enseigne">
           <input type="reset">
         </form>
