@@ -62,25 +62,21 @@
             while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "
                 <table>
-<<<<<<< HEAD
                 <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
                 <tr><td>Commentaire</td><td>".$vResult2['texte']."</td></tr>
                 <tr><td>Liker</td><td><button type='submit' name='pseudo' value='".$vResult2['idcommentaire']."'>Liker</button></td></tr>
                 </form>
-                <FORM METHOD='POST' ACTION='signaler.php'>
-                <tr><td>Signalement</td><td><button type='submit' name='pseudosignal' value='".$vResult2['idcommentaire']."'><label for='raison_signalement'> Raison  : </label>
-                <input type='text' name='raison_signalement' id='raison_signalement' />Signaler</button></td></tr>
+                <FORM METHOD='POST' ACTION='signalement.php'>
+                <tr><td>Signalement</td><td><label for='raison_signalement'> Raison  : </label>
+                <input type='text' name='raison_signalement' id='raison_signalement' /><button type='submit' name='pseudosignal' value='".$vResult2['idcommentaire']."'>Signaler</button></td></tr>
 
-=======
-                <tr><td>Utilisateur</td><td>".$vResult['pseudo']."</td></tr>
-                <tr><td>Commentaire</td><td>".$vResult['texte']."</td></tr>
-                <tr><td>Liker</td><button type='submit' name='pseudo' value='".$vResult['idcommentaire']."'>Liker</button></td></tr>
->>>>>>> ed48df3c23827055fda61067394973fd4e4e5d94
                 </table>";
             }
 
             pg_close($vConn);
             ?>
         </form>
+        <a href="annonce.php">Retour Annonce</a><br>
+        <a href="index.html">MENU</a>
     </body>
 </html>
