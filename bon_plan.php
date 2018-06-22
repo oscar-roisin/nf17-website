@@ -14,7 +14,7 @@
             $vSql = "SELECT idAnnonce, titreAnnonce, newPrice, initPrice FROM vAnnonceBA";
             $vQuery = pg_query($vConn, $vSql);
             while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
-                echo "<tr><td>".$vResult['idannonce']."</td><td>".$vResult['titreannonce']."</td><td>".$vResult['newPrice']."</td><td>".$vResult['initPrice']."</td></tr>";
+                echo "<tr><td>".$vResult['idannonce']."</td><td>".$vResult['titreannonce']."</td><td>".$vResult['newprice']."</td><td>".$vResult['initprice']."</td></tr>";
             }
             pg_close($vConn);
           ?>
