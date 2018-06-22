@@ -130,7 +130,9 @@
           <?php
           $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
           $vSql ="SELECT * FROM annonce";
-          $vQuery=pg_query($vConn, $vSql);
+          if(!$vQuery = pg_query($vConn, $vSql)){
+              echo "Erreur dans l'execution de la requête";
+          }
           echo"<select name='id'>";
           while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
             echo "<option value=".$vResult['idannonce'].">".$vResult['titreannonce']." </option>";
