@@ -5,6 +5,7 @@
         <title>Liste utilisateurs</title>
     </head>
     <body>
+            <h1> Affichage de l'annonce </h1>
             <?php
 
             $id = $_POST['id'];
@@ -40,6 +41,16 @@
                 echo"</td></tr>";
                 echo "<tr><td>Compteur</td><td>".$vResult['compteur']."</td></tr>
                 </table>";
+
+                echo"<h1> Affichage des commentaires de l'annonce </h1>";
+                $vSql2 ="SELECT * FROM commentaire WHERE idAnnonce=$id";
+                $vQuery2=pg_query($vConn, $vSql2);
+                while ($vResult2 = pg_fetch_array($vQuery2, null, PGSQL_ASSOC)) {
+                    echo "
+                    <table>
+                    <tr><td>Titre</td><td>".$vResult['pseudo']."</td></tr>
+                    <tr><td>Description</td><td>".$vResult['texte']."</td></tr>
+                    </table>";
             }
             pg_close($vConn);
             ?>
