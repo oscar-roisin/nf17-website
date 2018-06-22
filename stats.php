@@ -35,7 +35,7 @@
             $vQuery=pg_query($vConn, $vSql);
             echo "<table><tr><td>Pseudo</td><td>Annonces postées</td></tr>";
             while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
-              echo "<tr><td>".$vResult['pseudo']"</td><td>".$vResult['nbAnnonces']."</td></tr>";
+              echo "<tr><td>".$vResult['pseudo']."</td><td>".$vResult['nbAnnonces']."</td></tr>";
               }
             echo "</table>";
             pg_close($vConn);
