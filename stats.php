@@ -44,9 +44,9 @@
 
             echo "<br><h4>Liste des utilisateurs triés par nombre de commentaires postés</h4>";
 
-            $vSql ="SELECT pseudo, COUNT(idCommentaire) as nbCommentaires FROM Commentaire c JOIN Utilisateur u ON c.pseudo=u.pseudo GROUP BY pseudo ORDER BY nbCommentaires";
+            $vSql ="SELECT pseudo, COUNT(idCommentaire) as nbCommentaires FROM Commentaire c JOIN Utilisateur u ON c.pseudo=u.pseudo GROUP BY u.pseudo ORDER BY nbCommentaires";
             $vQuery=pg_query($vConn, $vSql);
-            echo "<table><tr><td>Pseudo</td><td>Comemntaires postées</td></tr>";
+            echo "<table><tr><td>Pseudo</td><td>Commentaires postées</td></tr>";
             while ($vResult = pg_fetch_array($vQuery, null, PGSQL_NUM)) {
               echo "<tr><td>".$vResult[0]."</td><td>".$vResult[1]."</td></tr>";
               }
