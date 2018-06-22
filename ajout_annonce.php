@@ -6,7 +6,7 @@
     </head>
     <body>
 
-      <a href="index.html">MENU</a>
+      <a href="http://tuxa.sme.utc/~nf17p095/">MENU</a>
       <?php
 
         $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
@@ -29,17 +29,19 @@
         $old_price = $_POST['old_price_annonce'];
         $port = $_POST['port_annonce'];
 
+        $image = $_POST['photo_annonce'];
+
         if($code == -1){
           $vSql = "INSERT INTO annonce(titreannonce, descriptionannonce, categorie,nomenseigne, type, lien,datedebut, dateexpiration, etat, active, compteur,
-                      newPrice, initPrice, fraisPort)
+                      newPrice, initPrice, fraisPort, photo)
                     values('$titre ', '$description', '$categorie', '$enseigne', '$type', '$lien', '$date_debut', '$date_expiration', '$etat', '$active', '$compteur',
-                          '$new_price', '$old_price', '$port') ;"    ;
+                          '$new_price', '$old_price', '$port', '$image') ;"    ;
         }
         else{
           $vSql = "INSERT INTO annonce(titreannonce, descriptionannonce, categorie,nomenseigne, type, lien,datedebut, dateexpiration, etat, active, compteur,
-                      code)
+                      code, photo)
                     values('$titre ', '$description', '$categorie', '$enseigne', '$type', '$lien', '$date_debut', '$date_expiration', '$etat', '$active', '$compteur',
-                          '$code') ;"    ;
+                          '$code', '$image') ;"    ;
         }
 
         $vQuery = pg_query($vConn, $vSql);

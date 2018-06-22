@@ -5,7 +5,7 @@
         <title>Ajotuer une Annonce</title>
     </head>
     <body>
-      <a href="index.html">MENU</a>
+      <a href="http://tuxa.sme.utc/~nf17p095/">MENU</a>
 
       <h1>Ajouter une Annonce</h1>
       <form method="post" action="ajout_annonce.php">
@@ -57,7 +57,7 @@
         </p>
         <p>
           <label for="code_annonce" class="code_annonce" > Code Promo : </label>
-          <input type="number" name="code_annonce" id="code_annonce" class="code_annonce" />
+          <input type="text" name="code_annonce" id="code_annonce" class="code_annonce" />
         </p>
         <p>
           <label class = "affaire_annonce" for="new_price_annonce" hidden=TRUE > Nouveau Prix : </label>
@@ -78,6 +78,7 @@
         var type = document.getElementById('type_annonce');
           type.value = "CodePromo";
         var code = document.getElementsByClassName('code_annonce');
+          code[1].value = 0;
         var affaire = document.getElementsByClassName('affaire_annonce');
         var i ;
         type.addEventListener('change', function() {
