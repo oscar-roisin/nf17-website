@@ -8,7 +8,16 @@
       <a href="index.html">MENU</a>
 
       <h1>Ajouter une Annonce</h1>
-      <form method="post" action="ajouter_annonce.php">
+      <form method="post" action="ajout_annonce.php">
+        <p>
+          <label for="type_annonce"> Type de l'annonce : </label>
+          <select name="type_annonce" id="type_annonce"  required>
+            <optgroup label="Type de l'annonce">
+              <option value="CodePromo"> Code de Promotion </option>
+              <option value="BonneAffaire"> Bonne Affaire </option>
+            </optgroup>
+          </select>
+        </p>
         <p>
           <label for="titre_annonce"> Titre de l'annonce : </label>
           <input type="text" name="titre_annonce" id="titre_annonce" maxlength="30" required/>
