@@ -6,8 +6,6 @@
     </head>
     <body>
 
-      <a href="index.html">MENU</a>
-      <a href="annonce.php">Retour aux annonces</a>
       <?php
         $pseudo = $_POST['user'];
         $idcommentaire = $_POST['idcommentaire'];
@@ -18,5 +16,9 @@
         pg_close($vConn);
 
       ?>
+      <p>Commentaire liké.</p>
+      <a href="index.html">MENU</a>
+      <a href="annonce.php">Retour aux annonces</a><br>
+
     </body>
 </html>
