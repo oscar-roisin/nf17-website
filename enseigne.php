@@ -16,14 +16,12 @@
           <input type="email" name="email"><br>
           Telephone:<br>
           <input type="text" name="telephone"><br>
-          Rue:<br>
-          <input type="text" name="localisationrue"><br>
-          Code Postal<br>
-          <input type="text" name="localisationcodepostal"><br>
-          Ville<br>
-          <input type="text" name="localisationville"><br>
-          Pays<br>
-          <input type="text" name="localisationpays"><br>
+          Adresse:<br>
+          N°<input type="number" name="localisationnumero">
+          Rue<input type="text" name="localisationrue"><br>
+          Code Postal<input type="number" name="localisationcodepostal">
+          Ville<input type="text" name="localisationville"><br>
+          Pays<input <type="text" name="localisationpays"><br>
           <input type="submit" name="ajout_enseigne">
           <input type="reset">
         </form>
