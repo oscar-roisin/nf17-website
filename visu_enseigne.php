@@ -5,6 +5,8 @@
         <title>Liste utilisateurs</title>
     </head>
     <body>
+			<a href="index.html">MENU</a>
+			<a href="enseigne.php">Retour Enseigne</a><br>
             <?php
 
             $nomenseigne = $_POST['nomenseigne'];
@@ -26,7 +28,5 @@
             }
             pg_close($vConn);
             ?>
-            <a href="enseigne.php">Retour Enseigne</a><br>
-            <a href="index.html">MENU</a>
     </body>
 </html>

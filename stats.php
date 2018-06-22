@@ -5,6 +5,7 @@
         <title>Statistiques</title>
     </head>
     <body>
+		<a href="index.html">MENU</a>
         <table>
             <?php
 
@@ -33,6 +34,5 @@
             pg_close($vConn);
             ?>
         </table>
-        <a href="index.html">MENU</a>
     </body>
 </html>

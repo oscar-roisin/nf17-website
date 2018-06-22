@@ -5,6 +5,8 @@
         <title>Liste utilisateurs</title>
     </head>
     <body>
+		<a href="index.html">MENU</a>
+		<a href="annonce.php">Retour Annonce</a><br>
             <h1> Affichage de l'annonce </h1>
             <?php
 
@@ -88,7 +90,5 @@
             pg_close($vConn);
             ?>
         </form>
-        <a href="annonce.php">Retour Annonce</a><br>
-        <a href="index.html">MENU</a>
     </body>
 </html>

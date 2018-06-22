@@ -5,6 +5,7 @@
         <title>Page Enseigne</title>
     </head>
     <body>
+		<a href="index.html">MENU</a>
       <h1>Enseignes</h1>
       <h2>Ajout</h2>
         <form METHOD='POST' ACTION='ajout_enseigne.php' >
@@ -40,6 +41,6 @@
           ?>
           <input type="submit" name="visu_enseigne">
         </form>
-        <a href="index.html">MENU</a>
+        
     </body>
 </html>

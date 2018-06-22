@@ -5,6 +5,8 @@
         <title>Liste utilisateurs</title>
     </head>
     <body>
+			<a href="index.html">MENU</a>
+			<a href="user.php">Retour Utilisateur</a><br>
             <?php
 
             $pseudo = $_POST['user'];
@@ -27,7 +29,5 @@
             }
             pg_close($vConn);
             ?>
-            <a href="user.php">Retour Utilisateur</a><br>
-            <a href="index.html">MENU</a>
     </body>
 </html>
