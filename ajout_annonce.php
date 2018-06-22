@@ -9,15 +9,28 @@
       <a href="index.html">MENU</a>
       <?php
 
-      $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
+        $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
 
-      $vSql ="INSERT INTO utilisateur(titreannonce, descriptionannonce, categorie,nomenseigne,lien,datedebut, dateexpiration)
-                    values($_POST['titre_annonce'], $_POST['description_annonce'],$_POST['categorie_annonce'],$_POST['enseigne_annonce'],
-                          $_POST['lien_annonce'], $_POST['date_debut_annonce'], $_POST['date_expiration_annonce'])
-      )";
-      $vQuery=pg_query($vConn, $vSql);
-      
-      pg_close($vConn);
+        $type = $_POST['type_annonce'];
+        $titre = $_POST['titre_annonce'];
+        $description = $_POST['description_annonce'];
+        $categorie = $_POST['categorie_annonce'];
+        $enseigne = $_POST['enseigne_annonce'];
+        $lien = $_POST['lien_annonce'];
+        $date_debut = $_POST['date_debut_annonce'];
+        $date_expiration = $_POST['date_expiration_annonce'];
+
+        $etat = TRUE ;
+        $active = TRUE;
+        $compteur = 0;
+
+        $vSql = "INSERT INTO annonce(titreannonce, descriptionannonce, categorie,nomenseigne, type, lien,datedebut, dateexpiration, etat, active, compteur)
+                  values('$titre ', '$description', '$categorie', '$enseigne', '$type', '$lien', '$date_debut', '$date_expiration', '$etat', '$active', '$compteur') ;"    ;
+
+        $vQuery = pg_query($vConn, $vSql);
+
+        pg_close($vConn);
+
       ?>
     </body>
 </html>
