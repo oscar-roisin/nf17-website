@@ -48,7 +48,7 @@
             echo"<FORM METHOD='POST' ACTION='visu_user.php'>";
             echo"<h2>Utilisateur à utiliser pour liker un commentaire</h2>"
             ;
-            $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
+
             $vSql ="SELECT * FROM utilisateur";
             $vQuery=pg_query($vConn, $vSql);
             echo"<select name='user'>";
@@ -56,16 +56,15 @@
             echo "<option value=".$vResult['pseudo'].">".$vResult['nom']." ".$vResult['prenom']." (".$vResult['pseudo'].")</option>";
             }
             echo"</select>";
-            pg_close($vConn);
 
-            $vSql2 ="SELECT * FROM commentaire WHERE idAnnonce=$id";
-            $vQuery2=pg_query($vConn, $vSql2);
-            while ($vResult2 = pg_fetch_array($vQuery2, null, PGSQL_ASSOC)) {
+            $vSql ="SELECT * FROM commentaire WHERE idAnnonce=$id";
+            $vQuery=pg_query($vConn, $vSql);
+            while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "
                 <table>
-                <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
-                <tr><td>Commentaire</td><td>".$vResult2['texte']."</td></tr>
-                <tr><td>Liker</td><button type='submit' name='pseudo' value='".$vResult2['idcommentaire']."'>Liker</button></td></tr>
+                <tr><td>Utilisateur</td><td>".$vResult['pseudo']."</td></tr>
+                <tr><td>Commentaire</td><td>".$vResult['texte']."</td></tr>
+                <tr><td>Liker</td><button type='submit' name='pseudo' value='".$vResult['idcommentaire']."'>Liker</button></td></tr>
                 </table>";
             }
 
