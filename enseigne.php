@@ -15,7 +15,7 @@
           Email:<br>
           <input type="email" name="email"><br>
           Telephone:<br>
-          <input type="text" name="telephone"><br>
+          <input type="tel" name="telephone"><br>
           Adresse:<br>
           N°<input type="number" name="localisationnumero">
           Rue<input type="text" name="localisationrue"><br>
@@ -33,7 +33,7 @@
           $vQuery=pg_query($vConn, $vSql);
           echo"<select name='enseigne'>";
           while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
-            echo "<option value=".$vResult['nomenseigne'].">".$vResult['nomenseigne']."</option>";
+            echo "<option value='".$vResult['nomenseigne']."'>".$vResult['nomenseigne']."</option>";
             }
             echo"</select>";
           pg_close($vConn);
