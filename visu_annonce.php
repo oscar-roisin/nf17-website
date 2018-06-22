@@ -45,7 +45,7 @@
 
             echo"<h1> Affichage des commentaires de l'annonce </h1>";
 
-            echo"<FORM METHOD='POST' ACTION='visu_user.php'>";
+            echo"<FORM METHOD='POST' ACTION='liker.php'>";
             echo"<h2>Utilisateur à utiliser pour liker un commentaire</h2>"
             ;
             $vConn = pg_connect("host=tuxa.sme.utc dbname=dbnf17p095 user=nf17p095 password=sMdOMm7S");
@@ -66,6 +66,8 @@
                 <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
                 <tr><td>Commentaire</td><td>".$vResult2['texte']."</td></tr>
                 <tr><td>Liker</td><td><button type='submit' name='pseudo' value='".$vResult2['idcommentaire']."'>Liker</button></td></tr>
+                </form>
+                <FORM METHOD='POST' ACTION='signaler.php'>
                 <tr><td>Signalement</td><td><button type='submit' name='pseudosignal' value='".$vResult2['idcommentaire']."'><label for='raison_signalement'> Raison  : </label>
                 <input type='text' name='raison_signalement' id='raison_signalement' />Signaler</button></td></tr>
 
