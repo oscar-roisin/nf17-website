@@ -30,7 +30,7 @@ La visualisation permet, en sélectionnant une enseigne, de voir les information
 Permet d'ajouter un nouveau badge dans la base de donnée.
 
 ## Attribuer un badge
-Permet d'attribuer un badge à un utilisateur en les sélectionnant dans des listes déroulantes.
+Permet d'attribuer un badge à un utilisateur en sélectionnant dans des listes déroulantes.
 
 ## Statistiques
 
@@ -47,7 +47,7 @@ Permet d'attribuer un badge à un utilisateur en les sélectionnant dans des lis
 
 ## Vues
 
-##### Liste des administrateurs
+#### Liste des administrateurs
 Affiche la liste des utilisateurs ayant le rôle administrateur, sous forme d'un tableau indiquant les IDs, noms et prénoms.
 
 #### Liste des annonces code promo
