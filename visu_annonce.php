@@ -46,7 +46,7 @@
             echo"<h1> Affichage des commentaires de l'annonce </h1>";
 
             echo"<FORM METHOD='POST' ACTION='liker.php'>";
-            echo"<h2>Utilisateur à utiliser pour liker un commentaire</h2>"
+            echo"<h2>Utilisateur à utiliser pour liker/signaler un commentaire</h2>"
             ;
 
             $vSql ="SELECT * FROM utilisateur";
@@ -59,6 +59,7 @@
 
             $vSql ="SELECT * FROM commentaire WHERE idAnnonce=$id";
             $vQuery=pg_query($vConn, $vSql);
+			echo "<h2>Commentaires</h2>";
             while ($vResult2 = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
                 echo "
                 <table>
