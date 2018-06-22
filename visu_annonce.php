@@ -68,8 +68,9 @@
                 <tr><td>Liker</td><button type='submit' name='pseudo' value='".$vResult2['idcommentaire']."'>Liker</button></td></tr>
                 </table>";
             }
+
             pg_close($vConn);
             ?>
-
+        </form>
     </body>
 </html>
