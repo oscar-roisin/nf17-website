@@ -1,4 +1,4 @@
-0<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
@@ -15,7 +15,7 @@
         </p>
         <p>
           <label for="description_annonce"> Description de l'annonce : </label>
-          <input type="text" name="description_annonce" id="description_annonce" />
+          <input type="text" name="description_annonce" id="description_annonce" required/>
         </p>
         <p>
           <label for="categorie_annonce"> Categorie de l'annonce : </label>

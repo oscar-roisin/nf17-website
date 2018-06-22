@@ -9,7 +9,7 @@
       <h2>Ajout</h2>
         <form METHOD='POST' ACTION='ajout_enseigne.php' >
           Nom de l'enseigne:<br>
-          <input type="text" name="nomenseigne"><br>
+          <input type="text" name="nomenseigne" required><br>
           Site web:<br>
           <input type="url" name="website"><br>
           Email:<br>

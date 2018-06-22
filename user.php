@@ -9,15 +9,15 @@
       <h2>Ajout</h2>
         <form METHOD='POST' ACTION='ajout_utilisateur.php' >
           Pseudo:<br>
-          <input type="text" name="pseudo"><br>
+          <input type="text" name="pseudo" required><br>
           NOM:<br>
-          <input type="text" name="nom"><br>
+          <input type="text" name="nom" required><br>
           Prenom:<br>
-          <input type="text" name="prenom"><br>
+          <input type="text" name="prenom" required><br>
           Date de naissance:<br>
           <input type="date" name="naissance"><br>
           Password:<br>
-          <input type="password" name="mdp"><br>
+          <input type="password" name="mdp" required><br>
           Adresse:<br>
           N°<input type="number" name="num_adresse">
           Rue<input type="text" name="rue_adresse"><br>
