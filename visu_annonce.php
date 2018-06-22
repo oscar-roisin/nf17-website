@@ -64,11 +64,22 @@
                 <table>
                 <tr><td>Utilisateur</td><td>".$vResult2['pseudo']."</td></tr>
                 <tr><td>Commentaire</td><td>".$vResult2['texte']."</td></tr>
-                <tr><td>Liker</td><td><button type='submit' name='pseudo' value='".$vResult2['idcommentaire']."'>Liker</button></td></tr>
+                <tr><td>Liker</td><td><button type='submit' name='pseudo' value=".$vResult2['idcommentaire'].">Liker</button></td></tr>
                 </form>
-                <FORM METHOD='POST' ACTION='signalement.php'>
+                
+                <FORM METHOD='POST' ACTION='signalement.php'>";
+
+                echo"<p>Utilisateur à utiliser pour signaler un commentaire</p>";
+
+                $vSql ="SELECT * FROM utilisateur";
+                $vQuery=pg_query($vConn, $vSql);
+                echo"<select name='user'>";
+                while ($vResult3 = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
+                echo "<option value=".$vResult3['pseudo'].">".$vResult3['nom']." ".$vResult3['prenom']." (".$vResult3['pseudo'].")</option>";
+                }
+                echo"</select>
                 <tr><td>Signalement</td><td><label for='raison_signalement'> Raison  : </label>
-                <input type='text' name='raison_signalement' id='raison_signalement' /><button type='submit' name='pseudosignal' value='".$vResult2['idcommentaire']."'>Signaler</button></td></tr>
+                <input type='text' name='raison_signalement' id='raison_signalement' /><button type='submit' name='pseudosignal' value=".$vResult2['idcommentaire'].">Signaler</button></td></tr>
 
                 </table>";
             }
