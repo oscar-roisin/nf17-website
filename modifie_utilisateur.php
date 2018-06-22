@@ -19,9 +19,9 @@
 
               echo"<p> Badge : <select name='id_badge'>";
               while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
-                $titre = $vResult['titreBadge'];
-                $desc = $vResult['descriptionBadge'];
-                echo "<option value=".$vResult['titreBadge']."> " .$vResult['titrebadge']. " </option>";
+                $titre = $vResult['titrebadge'];
+                $desc = $vResult['descriptionbadge'];
+                echo "<option value='".$vResult['titrebadge']."'> " .$vResult['titrebadge']. " </option>";
                 }
                 echo"</select> </p>";
 
@@ -29,7 +29,7 @@
               $vQuery=pg_query($vConn, $vSql);
               echo"<p> Utilisateur : <select name='id_user'>";
               while ($vResult = pg_fetch_array($vQuery, null, PGSQL_ASSOC)) {
-                echo "<option value=".$vResult['pseudo'].">".$vResult['pseudo']." </option>";
+                echo "<option value='".$vResult['pseudo']."'>".$vResult['pseudo']." </option>";
                 }
                 echo"</select></p>";
 
